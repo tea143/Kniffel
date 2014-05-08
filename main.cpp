@@ -1,19 +1,18 @@
-/* 
- * File:   main.cpp
- * Author: ASUS
- *
- * Created on 7. Mai 2014, 15:10
- */
-
-#include <cstdlib>
+#include <iostream>
+#include "header_files/spielFeld.h"
+#include "header_files/spieler.h"
 
 using namespace std;
 
-/*
- * 
- */
-int main(int argc, char** argv) {
+int main() {
+	unsigned int spielerAnzahl;
 
-    return 0;
+	cout << "Kniffel-Spiel fängt an:\n" << endl;
+	cout << "Wieviel Spieler spielen mit? " << endl;
+	cin >> spielerAnzahl;
+
+	SpielFeld spielFeld(spielerAnzahl);
+	vector<Spieler> spielerListe = spielFeld.spielerKreieren();
+
+	spielFeld.spielerAnzeigen(spielerListe);
 }
-
