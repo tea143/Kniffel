@@ -5,16 +5,27 @@
 #include <cstdlib>
 #include <ctime>
 #include <algorithm>
-#include "header_files/kategorie.h"
+
+#include "header_files/einerBisSechser.h"
+#include "header_files/dreierPasch.h"
+#include "header_files/vierPasch.h"
+#include "header_files/allgemein.h"
+
+#include "header_files/kategorieListe.h"
 
 using namespace std;
 
 int main() {
 
-	Kategorie kategorie;
+	vector<Kategorie*> kategorie;
 	vector<int> wuerfel;
 	srand(unsigned(time(0)));
 	int wert = 0;
+
+	kategorie.push_back(new EinerBisSechser);
+	kategorie.push_back(new Vierpasch);
+	kategorie.push_back(new Dreierpasch);
+	kategorie.push_back(new Allgemein);
 
 	//Augenwert generieren lassen:
 	for(size_t runde = 0; runde < 13; ++runde) {
@@ -37,7 +48,9 @@ int main() {
 		}
 		cout << endl;
 
-		cout << kategorie.punkteBerechnen(wuerfel) << endl;
+		KategorieListe kategorieListe(kategorie, wuerfel);
+
+		cout << kategorieListe.nutzenPunkteBerechnen() << endl;
 
 		//Wuerfel entleeren:
 		wuerfel.clear();
