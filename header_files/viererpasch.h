@@ -1,21 +1,22 @@
 /* 
- * File:   dreierpasch.h
+ * File:   viererpasch.h
  * Author: ASUS
  *
- * Created on 20. Mai 2014, 14:08
+ * Created on 20. Mai 2014, 14:10
  */
 
-#ifndef DREIERPASCH_H
-#define	DREIERPASCH_H
+#ifndef VIERERPASCH_H
+#define	VIERERPASCH_H
 
-#include<algorithm>
+#include <string>
 #include <iostream>
+#include <algorithm>
 #include "Kategorie.h"
 
-class Dreierpasch : public Kategorie {
+class Viererpasch : public Kategorie {
 public:
 
-    Dreierpasch();
+    Viererpasch();
     int punkteBerechnen(const std::vector<int> &augen);
     const std::string& getName() const;
     void setName(const std::string& name);
@@ -25,11 +26,8 @@ public:
 private:
     std::string name;
     int punktzahl;
-    std::vector<int> wuerfelAugen;
     bool gesetzt;
-    bool wuerfelGleich(int index1, int index2, int index3);
 };
 
-
-#endif	/* DREIERPASCH_H */
+#endif	/* VIERERPASCH_H */
 

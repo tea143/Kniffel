@@ -8,24 +8,27 @@
 #ifndef SPIELER_H_
 #define SPIELER_H_
 #include <string>
+#include <vector>
+#include "Kategorie.h"
+#include "dreierpasch.h"
+#include "viererpasch.h"
 
 class Spieler {
 public:
 
-	Spieler(const std::string& name_)
-		:name{name_} {}
+	Spieler(const std::string& n);
 
-	const std::string& getName() const {
-		return name;
-	}
-
-	void setName(const std::string& name) {
-		this->name = name;
-	}
+	const std::string& getName() const;
+        const int getPunktzahl() const;
+        void punktzahlErmitteln(int kategorie, const std::vector<int> wuerfel);
+        const std::vector<Kategorie*>& getKategorienListe() const;
+        void printFreieKategorien() const;
+	void setName(const std::string& name);
 
 private:
 	std::string name;
-
+        std::vector<Kategorie*> kategorienListe;
+        int punktzahl;
 };
 
 

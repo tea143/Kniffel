@@ -11,14 +11,20 @@
 #include <vector>
 
 class Kategorie {
-
 public:
 
-	virtual ~Kategorie() = default;
+    virtual ~Kategorie() = default;
 
-	virtual int punkteBerechnen(std::vector<int> augen) = 0;
+    Kategorie() = default;
+
+    virtual int punkteBerechnen(const std::vector<int> &augen) = 0;
+
+    virtual const std::string& getName() const = 0;
+
+    virtual int getPunktzahl() const = 0;
 
 };
 
 
 #endif /* KATEGORIE_H_ */
+

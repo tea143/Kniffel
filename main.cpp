@@ -1,19 +1,19 @@
 #include <iostream>
-#include "header_files/spielFeld.h"
-#include "header_files/spieler.h"
+#include "Spielfeld.h"
+#include "Spieler.h"
 
 using namespace std;
 
-/*int main() {
-	unsigned int spielerAnzahl;
+int main() {
+    unsigned int spielerAnzahl;
 
-	cout << "Kniffel-Spiel fängt an:\n" << endl;
-	cout << "Wieviel Spieler spielen mit? " << endl;
-	cin >> spielerAnzahl;
+    cout << "Das Kniffel-Spiel fängt an:\n" << endl;
+    cout << "Wie viele Spieler spielen mit? " << endl;
+    cin >> spielerAnzahl;
 
-	SpielFeld spielFeld(spielerAnzahl);
-	vector<Spieler> spielerListe = spielFeld.spielerKreieren();
-
-	spielFeld.spielerAnzeigen(spielerListe);
+    SpielFeld spielFeld(spielerAnzahl);
+    spielFeld.spielerKreieren();
+    spielFeld.spielerAnzeigen();
+    spielFeld.spielen();
+    //spielFeld.ergebnisErmitteln();
 }
-*/
