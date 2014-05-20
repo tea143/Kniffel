@@ -4,7 +4,7 @@
 
 using namespace std;
 
-int main() {
+/*int main() {
 	unsigned int spielerAnzahl;
 
 	cout << "Kniffel-Spiel fängt an:\n" << endl;
@@ -16,3 +16,4 @@ int main() {
 
 	spielFeld.spielerAnzeigen(spielerListe);
 }
+*/
