@@ -10,7 +10,7 @@
 
 #include<algorithm>
 #include <iostream>
-#include "Kategorie.h"
+#include "kategorie.h"
 
 class Dreierpasch : public Kategorie {
 public:

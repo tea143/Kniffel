@@ -8,20 +8,23 @@
 #ifndef ALLGEMEIN_H_
 #define ALLGEMEIN_H_
 
+#include <string>
+#include <iostream>
+#include <vector>
 #include "kategorie.h"
 
-class Chance: public Kategorie {
-
-	int punkteBerechnen(std::vector<int> augen) {
-		int summeAllerAugen = 0;
-		std::vector<int> temp = augen;
-
-		std::cout << "Chance: ";
-		for (size_t i = 0; i < temp.size(); i++) {
-			summeAllerAugen = summeAllerAugen + temp[i];
-		}
-		return summeAllerAugen;
-	}
+class Chance : public Kategorie {
+public:
+    Chance();
+    int punkteBerechnen(const std::vector<int> &augen);
+    const std::string& getName() const;
+    void setName(const std::string& name);
+    void setPunktzahl(int punktzahl);
+    int getPunktzahl() const;
+private:
+    std::string name;
+    int punktzahl;
+    bool gesetzt;
 };
 
 

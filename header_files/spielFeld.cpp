@@ -46,7 +46,7 @@ void SpielFeld::spielen() {
         cout << endl << "Runde " << i << ":" << endl;
         for (auto& spieler : spielerListe) {
             spieler.printFreieKategorien();
-            wuerfel = {3, 5, 5, 5, 5};
+            wuerfel = {3, 3, 3, 3, 3};
             //cout << "Gebe Nummer der Würfel aus, die du wieder in der Würfelbecher werfen willst!" << endl;
             cout << "Waehle eine freie Kategorie (Zahl): " << endl;
             int kategorie;

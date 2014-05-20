@@ -11,7 +11,7 @@
 #include <string>
 #include <iostream>
 #include <algorithm>
-#include "Kategorie.h"
+#include "kategorie.h"
 
 class Viererpasch : public Kategorie {
 public:

@@ -8,23 +8,24 @@
 #ifndef GROSSESTRASSE_H_
 #define GROSSESTRASSE_H_
 
+#include <string>
+#include <iostream>
+#include <algorithm>
 #include "kategorie.h"
 
-class GrosseStrasse: public Kategorie {
+class GrosseStrasse : public Kategorie {
+public:
+    GrosseStrasse();
+    int punkteBerechnen(const std::vector<int> &augen);
+    const std::string& getName() const;
+    void setName(const std::string& name);
+    void setPunktzahl(int punktzahl);
+    int getPunktzahl() const;
 
-	int punkteBerechnen(std::vector<int> augen) {
-		int punkte = 0;
-		std::vector<int> temp = augen;
-
-		for(size_t i = 0; i < 4; i++) {
-			if((temp[i] + 1) != (temp[i+1])) {
-				std::cout << "Keine Große Straße (1-2-3-4-5 / 2-3-4-5-6)" << std::endl;
-				return 0;
-			}
-		}
-		std::cout << "Große Straße: ";
-		return punkte = 40;
-	}
+private:
+    std::string name;
+    int punktzahl;
+    bool gesetzt;
 };
 
 

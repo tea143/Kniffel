@@ -15,9 +15,13 @@ Spieler::Spieler(const string& n) : name {
     n
 }
 {
-    cout << "Spieler erzeugt!" << endl;
     kategorienListe.push_back(new Dreierpasch());
     kategorienListe.push_back(new Viererpasch());
+    kategorienListe.push_back(new Chance());
+    kategorienListe.push_back(new Fullhouse());
+    kategorienListe.push_back(new GrosseStrasse());
+    kategorienListe.push_back(new KleineStrasse());
+    kategorienListe.push_back(new Kniffel());
 
 }
 

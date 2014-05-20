@@ -9,9 +9,14 @@
 #define SPIELER_H_
 #include <string>
 #include <vector>
-#include "Kategorie.h"
+#include "kategorie.h"
 #include "dreierpasch.h"
 #include "viererpasch.h"
+#include "fullHouse.h"
+#include "grosseStrasse.h"
+#include "kleineStrasse.h"
+#include "kniffel.h"
+#include "chance.h"
 
 class Spieler {
 public:

@@ -7,7 +7,7 @@ using namespace std;
 int main() {
     unsigned int spielerAnzahl;
 
-    cout << "Das Kniffel-Spiel fängt an:\n" << endl;
+    cout << "Das Kniffel-Spiel faengt an:\n" << endl;
     cout << "Wie viele Spieler spielen mit? " << endl;
     cin >> spielerAnzahl;
 

@@ -8,23 +8,24 @@
 #ifndef KNIFFEL_H_
 #define KNIFFEL_H_
 
+#include <string>
+#include <iostream>
 #include "kategorie.h"
 
-class Kniffel: public Kategorie {
+class Kniffel : public Kategorie {
+public:
+    Kniffel();
+    int punkteBerechnen(const std::vector<int> &augen);
+    const std::string& getName() const;
+    void setName(const std::string& name);
+    void setPunktzahl(int punktzahl);
+    int getPunktzahl() const;
 
-	int punkteBerechnen(std::vector<int> augen) {
-		int punkte = 0;
-		std::vector<int> temp = augen;
+private:
+    std::string name;
+    int punktzahl;
+    bool gesetzt;
 
-		if (temp[0] == temp[1] && temp[1] == temp[2] && temp[2] == temp[3] && temp[3] == temp[4]){
-			std::cout << "Kniffel: ";
-			return punkte = 50;
-		} else {
-			std::cout << "Kein Kniffel (Fünferpasch)" << std::endl;
-		}
-
-		return 0;
-	}
 };
 
 

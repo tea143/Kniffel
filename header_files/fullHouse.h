@@ -8,24 +8,25 @@
 #ifndef FULLHOUSE_H_
 #define FULLHOUSE_H_
 
+#include <string>
+#include <iostream>
+#include <algorithm>
 #include "kategorie.h"
 
 class Fullhouse: public Kategorie {
+    public:
 
-	int punkteBerechnen(std::vector<int> augen) {
-		int punkte = 0;
-		std::vector<int> temp = augen;
+    Fullhouse();
+    int punkteBerechnen(const std::vector<int> &augen);
+    const std::string& getName() const;
+    void setName(const std::string& name);
+    void setPunktzahl(int punktzahl);
+    int getPunktzahl() const;
 
-		if ((temp[0] == temp[1] && temp[1] == temp[2] && temp[3] == temp[4]) ||
-				(temp[0] == temp[1] && temp[2] == temp[3] && temp[3] == temp[4])) {
-			std::cout << "Full House: ";
-			return punkte = 25;
-		} else {
-			std::cout << "Kein Full House (Zweierpasch + Dreierpasch)" << std::endl;
-		}
-
-		return 0;
-	}
+private:
+    std::string name;
+    int punktzahl;
+    bool gesetzt;
 };
 
 
