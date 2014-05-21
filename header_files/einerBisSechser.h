@@ -10,6 +10,7 @@
 
 #include <string>
 #include <vector>
+#include <algorithm>
 #include "kategorie.h"
 
 class EinerBisSechser : public Kategorie {

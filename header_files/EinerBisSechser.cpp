@@ -1,14 +1,14 @@
 #include "einerBisSechser.h"
 
-#include <algorithm>
+using namespace std;
 
-EinerBisSechser::EinerBisSechser(int gesetzteZahl_, std::string name_)
+EinerBisSechser::EinerBisSechser(int gesetzteZahl_, string name_)
 	:gesetzteZahl{gesetzteZahl_},
 	 name{name_} {}
 
 
 
-int EinerBisSechser::punkteBerechnen(const std::vector<int> &augen) {
+int EinerBisSechser::punkteBerechnen(const vector<int> &augen) {
 	punktzahl = 0;
 	gesetzt = true;
 	wuerfelAugen = augen;
@@ -23,11 +23,11 @@ int EinerBisSechser::punkteBerechnen(const std::vector<int> &augen) {
 	return punktzahl;
 }
 
-const std::string& EinerBisSechser::getName() const {
+const string& EinerBisSechser::getName() const {
     return name;
 }
 
-void EinerBisSechser::setName(const std::string& name) {
+void EinerBisSechser::setName(const string& name) {
 	this->name = name;
 }
 
@@ -46,4 +46,5 @@ void EinerBisSechser::setPunktzahl(int punktzahl) {
 int EinerBisSechser::getPunktzahl() const {
     return punktzahl;
 }
+
 

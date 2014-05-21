@@ -15,13 +15,12 @@ Spieler::Spieler(const string& n) : name {
     n
 }
 {
-	kategorienListe.push_back(new EinerBisSechser(1, "Einer"));
-	kategorienListe.push_back(new EinerBisSechser(2, "Zweier"));
-	kategorienListe.push_back(new EinerBisSechser(3, "Dreier"));
-	kategorienListe.push_back(new EinerBisSechser(4, "Vierer"));
-	kategorienListe.push_back(new EinerBisSechser(5, "Fünfer"));
-	kategorienListe.push_back(new EinerBisSechser(6, "Sechser"));
-
+    kategorienListe.push_back(new EinerBisSechser(1, "Einer"));
+    kategorienListe.push_back(new EinerBisSechser(2, "Zweier"));
+    kategorienListe.push_back(new EinerBisSechser(3, "Dreier"));
+    kategorienListe.push_back(new EinerBisSechser(4, "Vierer"));
+    kategorienListe.push_back(new EinerBisSechser(5, "Fünfer"));
+    kategorienListe.push_back(new EinerBisSechser(6, "Sechser"));
     kategorienListe.push_back(new Dreierpasch());
     kategorienListe.push_back(new Viererpasch());
     kategorienListe.push_back(new Chance());
@@ -46,7 +45,7 @@ const int Spieler::getPunktzahl() const {
 
 void Spieler::punktzahlErmitteln(const int kategorienNummer, const std::vector<int> wuerfel) {
     kategorienListe.at(kategorienNummer)->punkteBerechnen(wuerfel);
-    cout << "erreichte Punkte in Kategorie " << kategorienListe.at(kategorienNummer)->getName() << " " ;
+    cout << "erreichte Punkte in Kategorie " << kategorienListe.at(kategorienNummer)->getName() << " ";
     cout << kategorienListe.at(kategorienNummer)->getPunktzahl() << endl;
 }
 
