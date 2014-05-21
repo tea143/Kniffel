@@ -10,6 +10,7 @@
 #include <string>
 #include <vector>
 #include "kategorie.h"
+#include "einerBisSechser.h"
 #include "dreierpasch.h"
 #include "viererpasch.h"
 #include "fullHouse.h"
