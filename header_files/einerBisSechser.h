@@ -28,7 +28,7 @@ public:
 
 private:
 	int gesetzteZahl;
-	int punktzahl;
+	int punktzahl = 0;
 	std::string name;
 	std::vector<int> wuerfelAugen;
 	bool gesetzt;

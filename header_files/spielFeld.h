@@ -7,15 +7,22 @@
 
 #ifndef SPIELFELD_H_
 #define SPIELFELD_H_
+
 #define SPIELRUNDEN 13
+#include <iostream>
 #include <vector>
+#include <cstddef>
+#include <string>
+#include "spielfeld.h"
+#include "spieler.h"
+#include "EinAusgabe.h"
 #include "spieler.h"
 
 class SpielFeld {
 public:
 
-	SpielFeld(unsigned int anzahl);
-	const unsigned int getSpielerAnzahl() const;
+	SpielFeld(size_t anzahl);
+	const size_t getSpielerAnzahl() const;
 	std::vector <Spieler> spielerKreieren();
 	void spielen();
 	void ergebnisErmitteln();
@@ -23,7 +30,7 @@ public:
         const std::vector<Spieler>& getSpielerListe() const;
 
 private:
-	unsigned int spielerAnzahl;
+	size_t spielerAnzahl;
         std::vector<Spieler> spielerListe;
         std::vector<int> wuerfel;
 };

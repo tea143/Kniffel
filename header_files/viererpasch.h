@@ -25,7 +25,7 @@ public:
 
 private:
     std::string name;
-    int punktzahl;
+    int punktzahl = 0;
     bool gesetzt;
     std::vector<int> wuerfelAugen;
     bool wuerfelGleich(int index1, int index2, int index3, int index4);

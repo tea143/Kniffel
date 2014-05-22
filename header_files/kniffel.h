@@ -23,7 +23,7 @@ public:
 
 private:
     std::string name;
-    int punktzahl;
+    int punktzahl = 0;
     bool gesetzt;
 
 };

@@ -6,8 +6,6 @@
  */
 
 #include "Spieler.h"
-#include<vector>
-#include<iostream>
 
 using namespace std;
 
@@ -47,6 +45,20 @@ void Spieler::punktzahlErmitteln(const int kategorienNummer, const std::vector<i
     kategorienListe.at(kategorienNummer)->punkteBerechnen(wuerfel);
     cout << "erreichte Punkte in Kategorie " << kategorienListe.at(kategorienNummer)->getName() << " ";
     cout << kategorienListe.at(kategorienNummer)->getPunktzahl() << endl;
+    punktzahl += kategorienListe.at(kategorienNummer)->getPunktzahl();
+}
+
+void Spieler::bonusErmitteln() {
+    int punkteFuerBonus = 0;
+    for (auto& kategorie : kategorienListe) {
+        if (typeid (*kategorie) == typeid (EinerBisSechser)) {
+            punkteFuerBonus += kategorie->getPunktzahl();
+            if (punkteFuerBonus >= 63) {
+                punktzahl += 35;
+                break;
+            }
+        }
+    }
 }
 
 const std::vector<Kategorie*>& Spieler::getKategorienListe() const {

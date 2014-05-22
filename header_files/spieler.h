@@ -9,6 +9,7 @@
 #define SPIELER_H_
 #include <string>
 #include <vector>
+#include<iostream>
 #include "kategorie.h"
 #include "einerBisSechser.h"
 #include "dreierpasch.h"
@@ -27,6 +28,7 @@ public:
 	const std::string& getName() const;
         const int getPunktzahl() const;
         void punktzahlErmitteln(int kategorie, const std::vector<int> wuerfel);
+        void bonusErmitteln();
         const std::vector<Kategorie*>& getKategorienListe() const;
         void printFreieKategorien() const;
 	void setName(const std::string& name);
@@ -34,7 +36,7 @@ public:
 private:
 	std::string name;
         std::vector<Kategorie*> kategorienListe;
-        int punktzahl;
+        int punktzahl = 0;
 };
 
 

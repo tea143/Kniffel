@@ -25,7 +25,7 @@ class Fullhouse: public Kategorie {
 
 private:
     std::string name;
-    int punktzahl;
+    int punktzahl = 0;
     bool gesetzt;
 };
 
