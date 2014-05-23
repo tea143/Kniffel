@@ -10,6 +10,10 @@
 
 #define SPIELRUNDEN 13
 #include <iostream>
+
+#include <stdio.h>
+#include <algorithm>
+
 #include <vector>
 #include <cstddef>
 #include <string>
