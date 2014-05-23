@@ -1,7 +1,7 @@
 #include <iostream>
-#include "header_files/spielFeld.h"
-#include "header_files/spieler.h"
-#include "header_files/EinAusgabe.h"
+#include "Spielfeld.h"
+#include "Spieler.h"
+#include "EinAusgabe.h"
 
 using namespace std;
 

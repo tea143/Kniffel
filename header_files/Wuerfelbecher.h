@@ -8,25 +8,27 @@
 #ifndef WUERFELBECHER_H_
 #define WUERFELBECHER_H_
 
+#include <iostream>
+#include <stdio.h>
+#include <algorithm>
 #include <vector>
 
+#include "EinAusgabe.h"
 #include "Zufallszahl.h"
 using namespace std;
 
-class Wuerfelbecher
-{
-// Definieren
+class Wuerfelbecher {
+    // Definieren
 public:
-	Wuerfelbecher();
-	~Wuerfelbecher();
-	// Variablen
-	vector<int> ergebnis;
-	vector<int> wuerfelbecher;
-	// Methoden
-	int schuetteln(int);
-	void wuerfeln();
-	void ausgabe(vector<int>);
-	int zahlPruefen(string);
+    Wuerfelbecher();
+    ~Wuerfelbecher();
+    void wuerfeln();
+    const std::vector<int>& getErgebnis() const;
+private:
+    vector<int> ergebnis;
+    vector<int> schuetteln(int);
+    void ausgabe(vector<int>);
+    int zahlPruefen(string);
 };
 
 #endif /* WUERFELBECHER_H_ */

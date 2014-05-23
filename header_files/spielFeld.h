@@ -36,7 +36,6 @@ public:
 private:
 	size_t spielerAnzahl;
         std::vector<Spieler> spielerListe;
-        std::vector<int> wuerfel;
 };
 
 #endif /* SPIELFELD_H_ */
