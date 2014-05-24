@@ -1,0 +1,109 @@
+/*
+ * wuerfelbecher.cpp
+ *
+ *  Created on: 21.05.2014
+ *      Author: IFI
+ */
+
+#include "wuerfelbecher.h"
+
+Wuerfelbecher::Wuerfelbecher() {
+	std::cout << "Wuerfelbecher-Objekt wurde erzeugt.\n";
+}
+
+Wuerfelbecher::~Wuerfelbecher() {
+	std::cout << "Wuerfelbecher-Objekt wurde beendet.\n";
+}
+
+// Erzeugt einen Array definierte Goesse mit Zahlen
+
+std::vector<int> Wuerfelbecher::schuetteln(int anzahlWuerfel) {
+    // Becher leeren
+    std::vector<int> wuerfelbecher(0);
+    for (size_t i = 0; i < static_cast<unsigned>(anzahlWuerfel); i++) {
+        wuerfelbecher.push_back(Zufallszahl::rnd(1, 6));
+    }
+    return wuerfelbecher;
+}
+
+const std::vector<int>& Wuerfelbecher::getErgebnis() const {
+    return ergebnis;
+}
+
+
+// Gibt der Array aus
+
+void Wuerfelbecher::ausgabe(std::vector<int> name) {
+    //Ergebnis sortieren
+    sort(Wuerfelbecher::ergebnis.begin(), Wuerfelbecher::ergebnis.end());
+    // ASCII Code fuer obere Reihe - Wuerfelbegrenzung
+    for (int a = 0; a < (int) name.size(); a++) {
+        printf("%c", 218);
+        printf("%c", 196);
+        printf("%c\t", 191);
+    }
+    printf("\n");
+    // Mittlere Reihe - Wuerfelseiten + Zahl
+    for (int a = 0; a < (int) name.size(); a++) {
+        printf("%c", 179);
+        printf("%d", name[a]);
+        printf("%c\t", 179);
+    }
+    printf("\n");
+    // ASCII Code fuer untere Reihe - Wuerfelbegrenzung
+    for (int a = 0; a < (int) name.size(); a++) {
+        printf("%c", 192);
+        printf("%c", 196);
+        printf("%c\t", 217);
+    }
+    printf("\n");
+    // Wuerfelnummern
+    printf("Nummern\n");
+    for (int a = 0; a < (int) name.size(); a++) {
+        printf(" %d \t", a + 1);
+    }
+}
+
+void Wuerfelbecher::wuerfeln() {
+    EinAusgabe io;
+    int anzahl;
+    int nummer;
+    char antwort;
+    std::vector<int> wuerfelbecher;
+    for (size_t versuch = 1; versuch < 4; versuch++) {
+        printf("Versuch %d\n", versuch);
+        if (versuch == 1) {
+            anzahl = 5;
+            wuerfelbecher = schuetteln(anzahl);
+            ergebnis = wuerfelbecher;
+        } else {
+            std::cout << "Möchtest du weiter würfeln? j/n:" << std::endl;
+            std::cin >> antwort;
+            fflush(stdin);
+            printf("\n");
+            if (antwort == 'j') {
+                std::cout << "Mit wie vielen Würfel möchtest du würfeln?" << std::endl;
+                anzahl = io.readNumberBetween(1, 5);
+                wuerfelbecher = schuetteln(anzahl);
+                for (size_t i = 0; i < wuerfelbecher.size(); i++) {
+                    std::cout << "Gib eine Würfelnummer ein:" << std::endl;
+                    nummer = io.readNumberBetween(1, 5);
+                    ergebnis.insert(ergebnis.begin() + (nummer - 1), wuerfelbecher.at(i));
+                    ergebnis.erase(ergebnis.begin() + nummer);
+                }
+            } else {
+                versuch = 4;
+            }
+        }
+        if (versuch != 4) {
+            printf("Wurfnummer: %d\n", versuch);
+            printf("Gewürfelt:\n");
+            ausgabe(wuerfelbecher);
+            printf("\n\n");
+            // Was im Ergebnis steht - sortiert
+            printf("Ergebnis:\n");
+            ausgabe(ergebnis);
+            printf("\n\n");
+        }
+    }
+}
