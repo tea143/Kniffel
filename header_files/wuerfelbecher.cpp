@@ -6,34 +6,35 @@
  */
 
 #include "wuerfelbecher.h"
+using namespace std;
 
 Wuerfelbecher::Wuerfelbecher() {
-	std::cout << "Wuerfelbecher-Objekt wurde erzeugt.\n";
+	cout << "Wuerfelbecher-Objekt wurde erzeugt.\n";
 }
 
 Wuerfelbecher::~Wuerfelbecher() {
-	std::cout << "Wuerfelbecher-Objekt wurde beendet.\n";
+	cout << "Wuerfelbecher-Objekt wurde beendet.\n";
 }
 
 // Erzeugt einen Array definierte Goesse mit Zahlen
 
-std::vector<int> Wuerfelbecher::schuetteln(int anzahlWuerfel) {
+vector<int> Wuerfelbecher::schuetteln(int anzahlWuerfel) {
     // Becher leeren
-    std::vector<int> wuerfelbecher(0);
+    vector<int> wuerfelbecher(0);
     for (size_t i = 0; i < static_cast<unsigned>(anzahlWuerfel); i++) {
         wuerfelbecher.push_back(Zufallszahl::rnd(1, 6));
     }
     return wuerfelbecher;
 }
 
-const std::vector<int>& Wuerfelbecher::getErgebnis() const {
+const vector<int>& Wuerfelbecher::getErgebnis() const {
     return ergebnis;
 }
 
 
 // Gibt der Array aus
 
-void Wuerfelbecher::ausgabe(std::vector<int> name) {
+void Wuerfelbecher::ausgabe(vector<int> name) {
     //Ergebnis sortieren
     sort(Wuerfelbecher::ergebnis.begin(), Wuerfelbecher::ergebnis.end());
     // ASCII Code fuer obere Reihe - Wuerfelbegrenzung
@@ -69,7 +70,7 @@ void Wuerfelbecher::wuerfeln() {
     int anzahl;
     int nummer;
     char antwort;
-    std::vector<int> wuerfelbecher;
+    vector<int> wuerfelbecher;
     for (size_t versuch = 1; versuch < 4; versuch++) {
         printf("Versuch %d\n", versuch);
         if (versuch == 1) {
@@ -77,16 +78,16 @@ void Wuerfelbecher::wuerfeln() {
             wuerfelbecher = schuetteln(anzahl);
             ergebnis = wuerfelbecher;
         } else {
-            std::cout << "Möchtest du weiter würfeln? j/n:" << std::endl;
-            std::cin >> antwort;
+            cout << "Möchtest du weiter würfeln? j/n:" << endl;
+            cin >> antwort;
             fflush(stdin);
             printf("\n");
             if (antwort == 'j') {
-                std::cout << "Mit wie vielen Würfel möchtest du würfeln?" << std::endl;
+                cout << "Mit wie vielen Würfel möchtest du würfeln?" << endl;
                 anzahl = io.readNumberBetween(1, 5);
                 wuerfelbecher = schuetteln(anzahl);
                 for (size_t i = 0; i < wuerfelbecher.size(); i++) {
-                    std::cout << "Gib eine Würfelnummer ein:" << std::endl;
+                    cout << "Gib eine Würfelnummer ein:" << endl;
                     nummer = io.readNumberBetween(1, 5);
                     ergebnis.insert(ergebnis.begin() + (nummer - 1), wuerfelbecher.at(i));
                     ergebnis.erase(ergebnis.begin() + nummer);
