@@ -9,11 +9,11 @@
 using namespace std;
 
 Wuerfelbecher::Wuerfelbecher() {
-	cout << "Wuerfelbecher-Objekt wurde erzeugt.\n";
+	cout << "W\x81 \brfelbecher-Objekt wurde erzeugt.\n";
 }
 
 Wuerfelbecher::~Wuerfelbecher() {
-	cout << "Wuerfelbecher-Objekt wurde beendet.\n";
+	cout << "W\x81 \brfelbecher-Objekt wurde beendet.\n";
 }
 
 // Erzeugt einen Array definierte Goesse mit Zahlen
@@ -72,22 +72,21 @@ void Wuerfelbecher::wuerfeln() {
     char antwort;
     vector<int> wuerfelbecher;
     for (size_t versuch = 1; versuch < 4; versuch++) {
-        printf("Versuch %d\n", versuch);
         if (versuch == 1) {
             anzahl = 5;
             wuerfelbecher = schuetteln(anzahl);
             ergebnis = wuerfelbecher;
         } else {
-            cout << "Möchtest du weiter würfeln? j/n:" << endl;
+            cout << "M\x94 \bchtest du weiter w\x81 \brfeln? j/n:" << endl;
             cin >> antwort;
             fflush(stdin);
             printf("\n");
             if (antwort == 'j') {
-                cout << "Mit wie vielen Würfel möchtest du würfeln?" << endl;
+                cout << "Mit wie vielen W\x81 \brfel m\x94 \bchtest du w\x81 \brfeln?" << endl;
                 anzahl = io.readNumberBetween(1, 5);
                 wuerfelbecher = schuetteln(anzahl);
                 for (size_t i = 0; i < wuerfelbecher.size(); i++) {
-                    cout << "Gib eine Würfelnummer ein:" << endl;
+                    cout << "Gib eine W\x81 \brfelnummer ein:" << endl;
                     nummer = io.readNumberBetween(1, 5);
                     ergebnis.insert(ergebnis.begin() + (nummer - 1), wuerfelbecher.at(i));
                     ergebnis.erase(ergebnis.begin() + nummer);
@@ -98,7 +97,7 @@ void Wuerfelbecher::wuerfeln() {
         }
         if (versuch != 4) {
             printf("Wurfnummer: %d\n", versuch);
-            printf("Gewürfelt:\n");
+            printf("Gew\x81 \brfelt:\n");
             ausgabe(wuerfelbecher);
             printf("\n\n");
             // Was im Ergebnis steht - sortiert
