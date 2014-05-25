@@ -18,11 +18,12 @@ class Zufallszahl {
 private:
 	//Konstruktor:
 	Zufallszahl(){
+		// Startwert des Zufallsgenerators
 		srand(static_cast<int>(time(NULL)));
 	}
 
 public:
-	// Erzeugt eine "zuf�llige" Zahl zwischen unten- und obergrenze
+	// Erzeugt eine "zufällige" Zahl zwischen unten- und obergrenze
 	static int rnd(int untergrenze, int obergrenze) {
 		// Neue Zufallszahl initialisieren
 		static Zufallszahl dummy;
