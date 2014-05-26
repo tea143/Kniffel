@@ -16,7 +16,6 @@
 #include "einAusgabe.h"
 #include "zufallszahl.h"
 
-using namespace std;
 
 class Wuerfelbecher {
     // Definieren
@@ -33,7 +32,6 @@ private:
     std::vector<int> ergebnis;
     std::vector<int> schuetteln(int);
     void ausgabe(std::vector<int>);
-    int zahlPruefen(std::string);
 };
 
 #endif /* WUERFELBECHER_H_ */
