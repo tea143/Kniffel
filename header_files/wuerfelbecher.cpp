@@ -77,16 +77,16 @@ void Wuerfelbecher::wuerfeln() {
             wuerfelbecher = schuetteln(anzahl);
             ergebnis = wuerfelbecher;
         } else {
-            std::cout << "Möchtest du weiter würfeln? j/n:" << std::endl;
+            std::cout << "M\x94 \bchtest du weiter w\x81 \brfeln? j/n:" << std::endl;
             std::cin >> antwort;
             fflush(stdin);
             printf("\n");
             if (antwort == 'j') {
-                std::cout << "Mit wie vielen Würfel möchtest du würfeln?" << std::endl;
+                std::cout << "Mit wie vielen W\x81 \brfel m\x94 \bchtest du w\x81 \brfeln?" << std::endl;
                 anzahl = io.readNumberBetween(1, 5);
                 wuerfelbecher = schuetteln(anzahl);
                 for (size_t i = 0; i < wuerfelbecher.size(); i++) {
-                    std::cout << "Gib eine Würfelnummer ein:" << std::endl;
+                    std::cout << "Gib eine W\x81 \brfelnummer ein:" << std::endl;
                     nummer = io.readNumberBetween(1, 5);
                     ergebnis.insert(ergebnis.begin() + (nummer - 1), wuerfelbecher.at(i));
                     ergebnis.erase(ergebnis.begin() + nummer);
@@ -97,7 +97,7 @@ void Wuerfelbecher::wuerfeln() {
         }
         if (versuch != 4) {
             printf("Wurfnummer: %d\n", versuch);
-            printf("Gewürfelt:\n");
+            printf("Gew\x81 \brfelt:\n");
             ausgabe(wuerfelbecher);
             printf("\n\n");
             // Was im Ergebnis steht - sortiert

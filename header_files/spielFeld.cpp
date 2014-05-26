@@ -44,7 +44,7 @@ void SpielFeld::spielen() {
             Wuerfelbecher becher;
             becher.wuerfeln();
             //cout << "Gebe Nummer der Würfel aus, die du wieder in der Würfelbecher werfen willst!" << endl;
-            std::cout << "Waehle eine freie Kategorie (Zahl): " << std::endl;
+            std::cout << "W\x84 \bhle eine freie Kategorie (Zahl): " << std::endl;
             EinAusgabe io;
             size_t kategorie = io.readNumberBetween(0, SPIELRUNDEN - 1);
             spieler.punktzahlErmitteln(kategorie, becher.getErgebnis());

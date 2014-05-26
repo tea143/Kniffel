@@ -17,7 +17,7 @@ int Kniffel::punkteBerechnen(const std::vector<int> &augen) {
         std::cout << "Kniffel: ";
         return punktzahl = 50;
     } else {
-        std::cout << "Kein Kniffel (Fuenferpasch)" << std::endl;
+        std::cout << "Kein Kniffel (F\x81 \bnferpasch)" << std::endl;
     }
 
     return 0;

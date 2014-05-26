@@ -14,7 +14,7 @@ Spieler::Spieler(const std::string& n)
     kategorienListe.push_back(new EinerBisSechser(2, "Zweier"));
     kategorienListe.push_back(new EinerBisSechser(3, "Dreier"));
     kategorienListe.push_back(new EinerBisSechser(4, "Vierer"));
-    kategorienListe.push_back(new EinerBisSechser(5, "Fünfer"));
+    kategorienListe.push_back(new EinerBisSechser(5, "F\x81 \bnfer"));
     kategorienListe.push_back(new EinerBisSechser(6, "Sechser"));
     kategorienListe.push_back(new Dreierpasch());
     kategorienListe.push_back(new Viererpasch());

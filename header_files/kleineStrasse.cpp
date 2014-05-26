@@ -1,7 +1,7 @@
 #include "kleineStrasse.h"
 
 KleineStrasse::KleineStrasse()
-	:name {"KleineStrasse"} {
+	:name {"Kleine_Stra\xE1 \be"} {
 	//std::cout << "KleineStrasse-Objekt wurde erzeugt.\n";
 }
 
@@ -25,15 +25,15 @@ int KleineStrasse::punkteBerechnen(const std::vector<int> &augen) {
                 if (zaehler == 0) {
                     zaehler++;
                 } else {
-                    std::cout << "Keine Kleine Strasse (1-2-3-4 / 2-3-4-5 / 3-4-5-6)" << std::endl;
+                    std::cout << "Keine Kleine Stra\xE1 \be (1-2-3-4 / 2-3-4-5 / 3-4-5-6)" << std::endl;
                     return 0;
                 }
             }
         }
-        std::cout << "Kleine Strasse: ";
+        std::cout << "Kleine Stra\xE1 \be: ";
         return punktzahl = 30;
     } else {
-        std::cout << "Keine Kleine Strasse (1-2-3-4 / 2-3-4-5 / 3-4-5-6)" << std::endl;
+        std::cout << "Keine Kleine Stra\xE1 \be (1-2-3-4 / 2-3-4-5 / 3-4-5-6)" << std::endl;
         return 0;
     }
 }
