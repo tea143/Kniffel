@@ -71,7 +71,6 @@ void Wuerfelbecher::wuerfeln() {
     char antwort;
     vector<int> wuerfelbecher;
     for (size_t versuch = 1; versuch < 4; versuch++) {
-        printf("Versuch %d\n", versuch);
         if (versuch == 1) {
             anzahl = 5;
             wuerfelbecher = schuetteln(anzahl);
