@@ -2,11 +2,11 @@
 
 KleineStrasse::KleineStrasse()
 	:name {"KleineStrasse"} {
-	std::cout << "KleineStrasse-Objekt wurde erzeugt.\n";
+	//std::cout << "KleineStrasse-Objekt wurde erzeugt.\n";
 }
 
 KleineStrasse::~KleineStrasse() {
-	std::cout << "KleineStrasse-Objekt wurde beendet.\n";
+	//std::cout << "KleineStrasse-Objekt wurde beendet.\n";
 }
 
 int KleineStrasse::punkteBerechnen(const std::vector<int> &augen) {

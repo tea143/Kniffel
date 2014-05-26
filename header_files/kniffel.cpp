@@ -2,11 +2,11 @@
 
 Kniffel::Kniffel()
 	:name {"Kniffel"} {
-	std::cout << "Kniffel-Objekt wurde erzeugt.\n";
+	//std::cout << "Kniffel-Objekt wurde erzeugt.\n";
 }
 
 Kniffel::~Kniffel() {
-	std::cout << "Kniffel-Objekt wurde beendet.\n";
+	//std::cout << "Kniffel-Objekt wurde beendet.\n";
 }
 
 int Kniffel::punkteBerechnen(const std::vector<int> &augen) {

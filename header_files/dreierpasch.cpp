@@ -2,10 +2,10 @@
 
 Dreierpasch::Dreierpasch()
 	:name {"Dreierpasch"}{
-	std::cout << "Dreierpasch-Objekt wurde erzeugt.\n";
+	//std::cout << "Dreierpasch-Objekt wurde erzeugt.\n";
 }
 Dreierpasch::~Dreierpasch() {
-	std::cout << "Dreierpasch-Objekt wurde beendet.\n";
+	//std::cout << "Dreierpasch-Objekt wurde beendet.\n";
 }
 
 int Dreierpasch::punkteBerechnen(const std::vector<int> &augen) {

@@ -2,11 +2,11 @@
 
 Fullhouse::Fullhouse()
 	:name {"Fullhouse"}{
-		std::cout << "Fullhouse-Objekt wurde erzeugt.\n";
+		//std::cout << "Fullhouse-Objekt wurde erzeugt.\n";
 }
 
 Fullhouse::~Fullhouse(){
-	std::cout << "Fullhouse-Objekt wurde beendet.\n";
+	//std::cout << "Fullhouse-Objekt wurde beendet.\n";
 }
 
 int Fullhouse::punkteBerechnen(const std::vector<int> &augen) {

@@ -10,11 +10,11 @@
 using namespace std;
 
 EinAusgabe::EinAusgabe() {
-	std::cout << "EinAusgabe-Objekt wurde erzeugt.\n";
+	//std::cout << "EinAusgabe-Objekt wurde erzeugt.\n";
 }
 
 EinAusgabe::~EinAusgabe() {
-	std::cout << "EinAusgabe-Objekt wurde beendet.\n";
+	//std::cout << "EinAusgabe-Objekt wurde beendet.\n";
 }
 
 size_t EinAusgabe::readNumberBetween(int anfang, int ende) {

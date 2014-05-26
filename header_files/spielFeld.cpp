@@ -3,11 +3,11 @@
 
 SpielFeld::SpielFeld(size_t anzahl)
 	:spielerAnzahl {anzahl}{
-		std::cout << "SpielFeld-Objekt wurde erzeugt.\n";
+		//std::cout << "SpielFeld-Objekt wurde erzeugt.\n";
 }
 
 SpielFeld::~SpielFeld() {
-	std::cout << "SpielFeld-Objekt wurde beendet.\n";
+	//std::cout << "SpielFeld-Objekt wurde beendet.\n";
 }
 
 const size_t SpielFeld::getSpielerAnzahl() const {

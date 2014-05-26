@@ -2,11 +2,11 @@
 
 Viererpasch::Viererpasch()
 	:name {"Viererpasch"}{
-		std::cout << "Viererpasch-Objekt wurde erzeugt.\n";
+		//std::cout << "Viererpasch-Objekt wurde erzeugt.\n";
 }
 
 Viererpasch::~Viererpasch() {
-	std::cout << "Viererpasch-Objekt wurde beendet.\n";
+	//std::cout << "Viererpasch-Objekt wurde beendet.\n";
 }
 
 int Viererpasch::punkteBerechnen(const std::vector<int> &augen) {

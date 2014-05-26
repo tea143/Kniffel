@@ -8,22 +8,20 @@
 #ifndef ZUFALLSZAHL_H_
 #define ZUFALLSZAHL_H_
 
-#include <cstdlib>
 #include <ctime>
 #include <cassert>
 
 class Zufallszahl {
 
-// Private Variable f�r den neuen Zeitstop
+// Private Variable fuer den neuen Zeitstop
 private:
 	//Konstruktor:
 	Zufallszahl(){
-		// Startwert des Zufallsgenerators
 		srand(static_cast<int>(time(NULL)));
 	}
 
 public:
-	// Erzeugt eine "zufällige" Zahl zwischen unten- und obergrenze
+	// Erzeugt eine "zufaellige" Zahl zwischen unten- und obergrenze
 	static int rnd(int untergrenze, int obergrenze) {
 		// Neue Zufallszahl initialisieren
 		static Zufallszahl dummy;

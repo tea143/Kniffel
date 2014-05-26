@@ -2,11 +2,11 @@
 
 Chance::Chance()
 	:name {"Chance"} {
-	std::cout << "Chance-Objekt wurde erzeugt.\n";
+	//std::cout << "Chance-Objekt wurde erzeugt.\n";
 }
 
 Chance::~Chance() {
-	std::cout << "Chance-Objekt wurde beendet.\n";
+	//std::cout << "Chance-Objekt wurde beendet.\n";
 }
 
 int Chance::punkteBerechnen(const std::vector<int> &augen) {
