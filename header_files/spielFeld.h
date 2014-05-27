@@ -15,6 +15,7 @@
 
 #include "spieler.h"
 #include "einAusgabe.h"
+#include "wuerfelbecher.h"
 
 class SpielFeld {
 public:
