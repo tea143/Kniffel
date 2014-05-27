@@ -3,6 +3,7 @@
 Dreierpasch::Dreierpasch()
 	:name {"Dreierpasch"}{
 	//std::cout << "Dreierpasch-Objekt wurde erzeugt.\n";
+		gesetzt = false;
 }
 Dreierpasch::~Dreierpasch() {
 	//std::cout << "Dreierpasch-Objekt wurde beendet.\n";

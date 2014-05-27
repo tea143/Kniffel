@@ -3,6 +3,7 @@
 KleineStrasse::KleineStrasse()
 	:name {"Kleine_Stra\xE1 \be"} {
 	//std::cout << "KleineStrasse-Objekt wurde erzeugt.\n";
+		gesetzt = false;
 }
 
 KleineStrasse::~KleineStrasse() {

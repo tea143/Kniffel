@@ -37,6 +37,7 @@ public:
 private:
 	std::string name;
         std::vector<Kategorie*> kategorienListe;
+        std::vector<bool> kategorieErledigt;
         int punktzahl = 0;
 };
 

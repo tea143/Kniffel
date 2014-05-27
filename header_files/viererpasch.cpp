@@ -3,6 +3,7 @@
 Viererpasch::Viererpasch()
 	:name {"Viererpasch"}{
 		//std::cout << "Viererpasch-Objekt wurde erzeugt.\n";
+		gesetzt = false;
 }
 
 Viererpasch::~Viererpasch() {

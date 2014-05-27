@@ -5,6 +5,7 @@ EinerBisSechser::EinerBisSechser(int gesetzteZahl_, std::string name_)
 	:gesetzteZahl{gesetzteZahl_},
 	 name{name_} {
 		//std::cout << "EinerBisSechser-Objekt wurde erzeugt.\n";
+		 gesetzt = false;
 	 }
 
 EinerBisSechser::~EinerBisSechser() {

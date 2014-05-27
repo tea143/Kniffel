@@ -1,5 +1,6 @@
 #include "spielFeld.h"
 #include "wuerfelbecher.h"
+#include "spieler.h"
 
 SpielFeld::SpielFeld(size_t anzahl)
 	:spielerAnzahl {anzahl}{

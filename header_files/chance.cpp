@@ -3,6 +3,7 @@
 Chance::Chance()
 	:name {"Chance"} {
 	//std::cout << "Chance-Objekt wurde erzeugt.\n";
+		gesetzt = false;
 }
 
 Chance::~Chance() {
@@ -11,6 +12,7 @@ Chance::~Chance() {
 
 int Chance::punkteBerechnen(const std::vector<int> &augen) {
     punktzahl = 0;
+    gesetzt = true;
     std::vector<int> temp = augen;
 
     std::cout << name;

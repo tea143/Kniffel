@@ -3,6 +3,7 @@
 GrosseStrasse::GrosseStrasse()
 	:name {"Gro\xE1 \be_Stra\xE1 \be"}{
 	//std::cout << "GrosseStrasse-Objekt wurde erzeugt.\n";
+		gesetzt = false;
 }
 
 GrosseStrasse::~GrosseStrasse() {

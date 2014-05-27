@@ -23,6 +23,10 @@ Spieler::Spieler(const std::string& n)
     kategorienListe.push_back(new GrosseStrasse());
     kategorienListe.push_back(new KleineStrasse());
     kategorienListe.push_back(new Kniffel());
+
+    for (size_t i = 0; i < kategorienListe.size(); i++) {
+    	kategorieErledigt.push_back(false);
+    }
 }
 
 Spieler::~Spieler() {
@@ -43,7 +47,8 @@ const int Spieler::getPunktzahl() const {
 
 void Spieler::punktzahlErmitteln(const int kategorienNummer, const std::vector<int> wuerfel) {
     kategorienListe.at(kategorienNummer)->punkteBerechnen(wuerfel);
-    std::cout << "erreichte Punkte in Kategorie " << kategorienListe.at(kategorienNummer)->getName() << " ";
+    kategorieErledigt.at(kategorienNummer) = true;
+    std::cout << "Erreichte Punkte in Kategorie " << kategorienListe.at(kategorienNummer)->getName() << " ";
     std::cout << kategorienListe.at(kategorienNummer)->getPunktzahl() << std::endl;
     punktzahl += kategorienListe.at(kategorienNummer)->getPunktzahl();
 }
@@ -68,6 +73,12 @@ const std::vector<Kategorie*>& Spieler::getKategorienListe() const {
 void Spieler::printFreieKategorien() const {
     std::cout << std::endl << "Kategorien: " << std::endl;
     for (size_t i = 0; i < kategorienListe.size(); i++) {
-        std::cout << i << ". " << kategorienListe.at(i)->getName() << ": Punktzahl: " << kategorienListe.at(i)->getPunktzahl() << std::endl;
+        std::cout << i << ". " << kategorienListe.at(i)->getName() << ":\t";
+        if(kategorieErledigt.at(i)) {
+        	std::cout << "Punktzahl: " << kategorienListe.at(i)->getPunktzahl();
+        } else {
+        	std::cout << "offen";
+        }
+        std::cout << std::endl;
     }
 }

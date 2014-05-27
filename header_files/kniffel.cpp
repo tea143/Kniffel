@@ -3,6 +3,7 @@
 Kniffel::Kniffel()
 	:name {"Kniffel"} {
 	//std::cout << "Kniffel-Objekt wurde erzeugt.\n";
+		gesetzt = false;
 }
 
 Kniffel::~Kniffel() {

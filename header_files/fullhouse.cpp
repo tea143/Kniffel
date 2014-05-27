@@ -3,6 +3,7 @@
 Fullhouse::Fullhouse()
 	:name {"Fullhouse"}{
 		//std::cout << "Fullhouse-Objekt wurde erzeugt.\n";
+		gesetzt = false;
 }
 
 Fullhouse::~Fullhouse(){
