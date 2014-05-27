@@ -17,22 +17,21 @@
 #include "einAusgabe.h"
 
 class SpielFeld {
-
 public:
-	//Konstruktor:
-	SpielFeld(size_t anzahl);
-	//Destruktor:
-	~SpielFeld();
+    //Konstruktor:
+    SpielFeld(size_t);
+    //Destruktor:
+    ~SpielFeld();
 
-	const size_t getSpielerAnzahl() const;
-	std::vector <Spieler> spielerKreieren();
-	void spielen();
-	void ergebnisErmitteln();
-	void spielerAnzeigen();
+    const size_t getSpielerAnzahl() const;
+    std::vector<Spieler>& spielerKreieren();
+    void spielen();
+    void ergebnisErmitteln();
+    void spielerAnzeigen();
     const std::vector<Spieler>& getSpielerListe() const;
 
 private:
-	size_t spielerAnzahl;
+    size_t spielerAnzahl;
     std::vector<Spieler> spielerListe;
 };
 

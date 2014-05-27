@@ -16,7 +16,6 @@ class EinAusgabe {
 public:
     EinAusgabe();
     virtual ~EinAusgabe();
-
     size_t readNumberBetween(int, int);
 
 };

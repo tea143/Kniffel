@@ -14,17 +14,21 @@
 #include <string>
 
 class Kategorie {
-
 public:
 
     virtual ~Kategorie() = default;
-    Kategorie() = default;
-    virtual int punkteBerechnen(const std::vector<int> &augen) = 0;
-    virtual const std::string& getName() const = 0;
-    virtual void setName(const std::string& name) = 0;
-    virtual void setPunktzahl(int punktzahl) = 0;
-    virtual int getPunktzahl() const = 0;
-
+    Kategorie(const std::string&);
+    virtual int punkteBerechnen(const std::vector<int>&) = 0;
+    const std::string& getName() const;
+    void setName(const std::string&);
+    void setPunktzahl(int);
+    int getPunktzahl() const;
+    bool isGesetzt() const;
+protected:
+    int punktzahl = 0;
+    bool gesetzt = false;
+private:
+    std::string name;
 };
 
 

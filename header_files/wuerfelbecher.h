@@ -18,11 +18,8 @@
 
 
 class Wuerfelbecher {
-    // Definieren
 public:
-	//Konstruktor:
     Wuerfelbecher();
-    //Destruktor:
     ~Wuerfelbecher();
 
     void wuerfeln();

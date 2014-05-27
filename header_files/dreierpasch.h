@@ -17,19 +17,12 @@ public:
     Dreierpasch();
     //Destruktor:
     ~Dreierpasch();
-
-    int punkteBerechnen(const std::vector<int> &augen);
-    const std::string& getName() const;
-    void setName(const std::string& name);
-    void setPunktzahl(int punktzahl);
-    int getPunktzahl() const;
+    int punkteBerechnen(const std::vector<int>&);
 
 private:
-    std::string name;
-    int punktzahl = 0;
+
     std::vector<int> wuerfelAugen;
-    bool gesetzt;
-    bool wuerfelGleich(int index1, int index2, int index3);
+    bool wuerfelGleich(int, int, int);
 };
 
 

@@ -1,9 +1,7 @@
 #include "kniffel.h"
 
 Kniffel::Kniffel()
-	:name {"Kniffel"} {
-	//std::cout << "Kniffel-Objekt wurde erzeugt.\n";
-		gesetzt = false;
+	: Kategorie("Kniffel"){
 }
 
 Kniffel::~Kniffel() {
@@ -22,20 +20,4 @@ int Kniffel::punkteBerechnen(const std::vector<int> &augen) {
     }
 
     return 0;
-}
-
-const std::string& Kniffel::getName() const {
-    return name;
-}
-
-void Kniffel::setName(const std::string& name) {
-    this->name = name;
-}
-
-void Kniffel::setPunktzahl(int punktzahl) {
-    this->punktzahl = punktzahl;
-}
-
-int Kniffel::getPunktzahl() const {
-    return punktzahl;
 }

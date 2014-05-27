@@ -21,18 +21,16 @@
 class Spieler {
 
 public:
-	//Konstruktor:
-	Spieler(const std::string& n);
-	//Destruktor:
+	Spieler(const std::string&);
 	~Spieler();
 
 	const std::string& getName() const;
         const int getPunktzahl() const;
-        void punktzahlErmitteln(int kategorie, const std::vector<int> wuerfel);
+        bool punktzahlErmitteln(int , const std::vector<int>&);
         void bonusErmitteln();
         const std::vector<Kategorie*>& getKategorienListe() const;
         void printFreieKategorien() const;
-	void setName(const std::string& name);
+	void setName(const std::string&);
 
 private:
 	std::string name;
