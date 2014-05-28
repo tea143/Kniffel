@@ -33,6 +33,7 @@ public:
 
 private:
     size_t spielerAnzahl;
+    EinAusgabe io;
     std::vector<Spieler> spielerListe;
 };
 

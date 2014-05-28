@@ -42,7 +42,6 @@ void SpielFeld::spielen() {
             Wuerfelbecher becher;
             becher.wuerfeln();
             std::cout << "W\x84 \bhle eine freie Kategorie (Zahl): " << std::endl;
-            EinAusgabe io;
             bool freieKategorie = false;
             while (!freieKategorie) {
                 size_t kategorie = io.readNumberBetween(0, SPIELRUNDEN - 1);
