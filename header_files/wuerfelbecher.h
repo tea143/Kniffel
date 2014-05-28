@@ -27,8 +27,10 @@ public:
 
 private:
     std::vector<int> ergebnis;
+    std::vector<int> wuerfelbecher;
     std::vector<int> schuetteln(int);
-    void ausgabe(std::vector<int>);
+    EinAusgabe io;
+    void wuerfelAuswaehlen();
 };
 
 #endif /* WUERFELBECHER_H_ */

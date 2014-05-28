@@ -1,15 +1,11 @@
 #include "spielFeld.h"
 
 SpielFeld::SpielFeld(size_t anzahl)
-: spielerAnzahl {
-    anzahl
-}
+: spielerAnzahl {anzahl}
 {
-    //std::cout << "SpielFeld-Objekt wurde erzeugt.\n";
 }
 
 SpielFeld::~SpielFeld() {
-    //std::cout << "SpielFeld-Objekt wurde beendet.\n";
 }
 
 const size_t SpielFeld::getSpielerAnzahl() const {
@@ -45,7 +41,6 @@ void SpielFeld::spielen() {
             spieler.printFreieKategorien();
             Wuerfelbecher becher;
             becher.wuerfeln();
-            //cout << "Gebe Nummer der Würfel aus, die du wieder in der Würfelbecher werfen willst!" << endl;
             std::cout << "W\x84 \bhle eine freie Kategorie (Zahl): " << std::endl;
             EinAusgabe io;
             bool freieKategorie = false;

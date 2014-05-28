@@ -10,6 +10,7 @@
 
 #include <iostream>
 #include <limits>
+#include <vector>
 
 class EinAusgabe {
 
@@ -17,6 +18,7 @@ public:
     EinAusgabe();
     virtual ~EinAusgabe();
     size_t readNumberBetween(int, int);
+    void wuerfelAusgeben(std::vector<int>);
 
 };
 

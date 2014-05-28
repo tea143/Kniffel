@@ -21,11 +21,11 @@ Spieler::Spieler(const std::string& n)
     kategorienListe.push_back(new EinerBisSechser(6, "Sechser"));
     kategorienListe.push_back(new Dreierpasch());
     kategorienListe.push_back(new Viererpasch());
-    kategorienListe.push_back(new Chance());
     kategorienListe.push_back(new Fullhouse());
     kategorienListe.push_back(new GrosseStrasse());
     kategorienListe.push_back(new KleineStrasse());
-    kategorienListe.push_back(new Kniffel());
+    kategorienListe.push_back(new Kniffel());    
+    kategorienListe.push_back(new Chance());
 
     for (size_t i = 0; i < kategorienListe.size(); i++) {
         kategorieErledigt.push_back(false);
