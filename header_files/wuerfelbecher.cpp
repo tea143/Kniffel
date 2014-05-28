@@ -48,8 +48,12 @@ void Wuerfelbecher::wuerfeln() {
             schuetteln(anzahl);
             ergebnis = wuerfelbecher;
         } else {
-            cout << "M\x94 \bchtest du weiter w\x81 \brfeln? j/n:" << endl;
-            cin >> antwort;
+        	do {
+        		cout << "M\x94 \bchtest du weiter w\x81 \brfeln? j/n:" << std::endl;
+        		cin >> antwort;
+        		//fflush(stdin);
+        		//printf("\n");
+        	} while(antwort != 'j' && antwort != 'n');
             if (antwort == 'j') {
                 cout << endl << "Mit wie vielen W\x81 \brfel m\x94 \bchtest du w\x81 \brfeln?" << endl;
                 anzahl = io.readNumberBetween(1, 5);
