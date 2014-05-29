@@ -1,6 +1,6 @@
 #include <gtest/gtest.h>
 #include <vector>
-#include "grosseStrasse.h"
+#include "../header_files/grosseStrasse.h"
 
 using namespace std;
 

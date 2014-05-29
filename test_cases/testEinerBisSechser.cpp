@@ -1,6 +1,6 @@
-#include "einerBisSechser.h"
 #include <gtest/gtest.h>
 #include <vector>
+#include "../header_files/einerBisSechser.h"
 
 using namespace std;
 

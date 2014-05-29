@@ -1,6 +1,6 @@
 #include <gtest/gtest.h>
 #include <vector>
-#include "fullHouse.h"
+#include "../header_files/fullHouse.h"
 
 using namespace std;
 

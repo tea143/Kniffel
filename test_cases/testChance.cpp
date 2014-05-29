@@ -1,6 +1,6 @@
 #include <gtest/gtest.h>
 #include <vector>
-#include "chance.h"
+#include "../header_files/chance.h"
 
 using namespace std;
 
@@ -17,3 +17,4 @@ TEST(ChanceTest, testAndereZahlen) {
     c.punkteBerechnen(wuerfel);
     EXPECT_EQ(15, c.getPunktzahl());
 }
+

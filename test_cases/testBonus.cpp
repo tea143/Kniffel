@@ -1,6 +1,6 @@
 #include <gtest/gtest.h>
 #include <vector>
-#include "spieler.h"
+#include "../header_files/spieler.h"
 
 using namespace std;
 
@@ -25,3 +25,4 @@ TEST(BonusTest, testKeinBonus) {
     s.bonusErmitteln();
     EXPECT_EQ(0, s.getPunktzahl());
 }
+
