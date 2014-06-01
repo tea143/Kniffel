@@ -1,8 +1,8 @@
 /*
- * Wuerfelbecher.h
+ *  @file: wuerfelbecher.h
  *
- *  Created on: 20.05.2014
- *      Author: IFI
+ *  @date: 20.05.2014
+ *  @author: IFI
  */
 
 #ifndef WUERFELBECHER_H_
