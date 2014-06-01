@@ -1,0 +1,23 @@
+digraph "Graphical Class Hierarchy"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="Kategorie",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_kategorie.html"];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="Chance",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_chance.html"];
+  Node1 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="Dreierpasch",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_dreierpasch.html"];
+  Node1 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="EinerBisSechser",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_einer_bis_sechser.html"];
+  Node1 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="Fullhouse",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_fullhouse.html"];
+  Node1 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="GrosseStrasse",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_grosse_strasse.html"];
+  Node1 -> Node7 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 [label="KleineStrasse",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_kleine_strasse.html"];
+  Node1 -> Node8 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node8 [label="Kniffel",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_kniffel.html"];
+  Node1 -> Node9 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node9 [label="Viererpasch",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_viererpasch.html"];
+}
