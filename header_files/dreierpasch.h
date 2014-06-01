@@ -20,9 +20,7 @@ public:
     int punkteBerechnen(const std::vector<int>&);
 
 private:
-
-    std::vector<int> wuerfelAugen;
-    bool wuerfelGleich(int, int, int);
+    bool wuerfelGleich(int, int, int, const std::vector<int>&);
 };
 
 

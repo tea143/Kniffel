@@ -22,7 +22,6 @@ public:
 
 private:
 	int gesetzteZahl;
-	std::vector<int> wuerfelAugen;
 };
 
 #endif	/* EINERBISSECHSER_H */
