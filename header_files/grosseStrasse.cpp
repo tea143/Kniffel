@@ -2,10 +2,11 @@
 
 GrosseStrasse::GrosseStrasse()
 	: Kategorie("Gro\xE1 \be Stra\xE1 \be"){
+	//std::cout << getName() << "-Objekt wurde erzeugt.\n";
 }
 
 GrosseStrasse::~GrosseStrasse() {
-	std::cout << getName() << "-Objekt wurde beendet.\n";
+	//std::cout << getName() << "-Objekt wurde beendet.\n";
 }
 
 int GrosseStrasse::punkteBerechnen(const std::vector<int> &augen) {

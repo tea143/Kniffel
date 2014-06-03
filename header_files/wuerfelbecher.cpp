@@ -6,6 +6,7 @@
  */
 
 #include "wuerfelbecher.h"
+
 using namespace std;
 
 Wuerfelbecher::Wuerfelbecher() {
@@ -13,7 +14,7 @@ Wuerfelbecher::Wuerfelbecher() {
 }
 
 Wuerfelbecher::~Wuerfelbecher() {
-    std::cout << "W\x81 \brfelbecher-Objekt wurde beendet.\n";
+    //std::cout << "W\x81 \brfelbecher-Objekt wurde beendet.\n";
 }
 
 vector<int> Wuerfelbecher::schuetteln(int anzahlWuerfel) {
@@ -55,7 +56,9 @@ void Wuerfelbecher::wuerfeln() {
                 cout << endl << "Mit wie vielen W\x81 \brfel m\x94 \bchtest du w\x81 \brfeln?" << endl;
                 anzahl = io.readNumberBetween(1, 5);
                 schuetteln(anzahl);
-                wuerfelAuswaehlen();
+                if (anzahl < 5) {
+                	wuerfelAuswaehlen();
+				}
             } else {
                 versuch = 4;
             }

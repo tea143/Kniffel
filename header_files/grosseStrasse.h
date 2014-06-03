@@ -13,10 +13,12 @@
 class GrosseStrasse : public Kategorie {
 
 public:
+	//Konstruktor:
     GrosseStrasse();
+    //Destruktor
     ~GrosseStrasse();
 
-    int punkteBerechnen(const std::vector<int>&);
+    virtual int punkteBerechnen(const std::vector<int>&) override;
 };
 
 

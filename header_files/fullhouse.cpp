@@ -2,10 +2,11 @@
 
 Fullhouse::Fullhouse()
 	: Kategorie("Fullhouse") {
+	//std::cout << getName() << "-Objekt wurde erzeugt.\n";
 }
 
 Fullhouse::~Fullhouse(){
-	std::cout << getName() << "-Objekt wurde beendet.\n";
+	//std::cout << getName() << "-Objekt wurde beendet.\n";
 }
 
 int Fullhouse::punkteBerechnen(const std::vector<int> &augen) {

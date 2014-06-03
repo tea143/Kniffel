@@ -12,7 +12,7 @@ Spieler::Spieler(const std::string& n)
     n
 }
 {
-    //std::cout << "Spieler-Objekt wurde erzeugt.\n";
+    //std::cout << getName() << "-Spieler-Objekt wurde erzeugt.\n";
     kategorienListe.push_back(new EinerBisSechser(1, "Einer"));
     kategorienListe.push_back(new EinerBisSechser(2, "Zweier"));
     kategorienListe.push_back(new EinerBisSechser(3, "Dreier"));
@@ -33,7 +33,7 @@ Spieler::Spieler(const std::string& n)
 }
 
 Spieler::~Spieler() {
-    std::cout << "Spieler-Objekt wurde beendet.\n";
+    //std::cout << getName() << "-Spieler-Objekt wurde beendet.\n";
 }
 
 const std::string& Spieler::getName() const {

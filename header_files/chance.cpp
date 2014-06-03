@@ -1,11 +1,13 @@
 #include "chance.h"
 
 Chance::Chance()
-	: Kategorie("Chance"), gesetzt {false} {
+	: Kategorie("Chance"),
+	  gesetzt {false} {
+	//std::cout << getName() << "-Objekt wurde erzeugt.\n";
 }
 
 Chance::~Chance() {
-	std::cout << getName() << "-Objekt wurde beendet.\n";
+	//std::cout << getName() << "-Objekt wurde beendet.\n";
 }
 
 int Chance::punkteBerechnen(const std::vector<int> &augen) {

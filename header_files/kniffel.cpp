@@ -2,10 +2,11 @@
 
 Kniffel::Kniffel()
 	: Kategorie("Kniffel"){
+	//std::cout << getName() << "-Objekt wurde erzeugt.\n";
 }
 
 Kniffel::~Kniffel() {
-	std::cout << getName() << "-Objekt wurde beendet.\n";
+	//std::cout << getName() << "-Objekt wurde beendet.\n";
 }
 
 int Kniffel::punkteBerechnen(const std::vector<int> &augen) {

@@ -8,10 +8,8 @@
 #ifndef WUERFELBECHER_H_
 #define WUERFELBECHER_H_
 
-#include <iostream>
 #include <stdio.h>
 #include <algorithm>
-#include <vector>
 
 #include "einAusgabe.h"
 #include "zufallszahl.h"

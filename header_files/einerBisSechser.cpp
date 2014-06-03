@@ -1,26 +1,27 @@
 #include "einerBisSechser.h"
 
 EinerBisSechser::EinerBisSechser(int gesetzteZahl_, std::string name_)
-: Kategorie(name_), gesetzteZahl{gesetzteZahl_ }
+: Kategorie(name_),
+  gesetzteZahl{gesetzteZahl_ }
 {
-    //std::cout << "EinerBisSechser-Objekt wurde erzeugt.\n";
+	//std::cout << getName() << "-Objekt wurde erzeugt.\n";
 
 }
 
 EinerBisSechser::~EinerBisSechser() {
-    std::cout << getName() << "-Objekt wurde beendet.\n";
+    //std::cout << getName() << "-Objekt wurde beendet.\n";
 }
 
 int EinerBisSechser::punkteBerechnen(const std::vector<int> &augen) {
     punktzahl = 0;
     gesetzt = true;
-    wuerfelAugen = augen;
+    std::vector<int> temp = augen;
     int gesuchteZahl = gesetzteZahl;
-    std::sort(wuerfelAugen.begin(), wuerfelAugen.end());
+    std::sort(temp.begin(), temp.end());
 
-    for (size_t i = 0; i < wuerfelAugen.size(); i++) {
-        if (gesuchteZahl == wuerfelAugen[i]) {
-            punktzahl = punktzahl + wuerfelAugen[i];
+    for (size_t i = 0; i < temp.size(); i++) {
+        if (gesuchteZahl == temp[i]) {
+            punktzahl = punktzahl + temp[i];
         }
     }
     return punktzahl;

@@ -14,7 +14,7 @@ EinAusgabe::EinAusgabe() {
 }
 
 EinAusgabe::~EinAusgabe() {
-    std::cout << "EinAusgabe-Objekt wurde beendet.\n";
+    //std::cout << "EinAusgabe-Objekt wurde beendet.\n";
 }
 
 size_t EinAusgabe::readNumberBetween(int anfang, int ende) {
@@ -29,22 +29,22 @@ size_t EinAusgabe::readNumberBetween(int anfang, int ende) {
 
 void EinAusgabe::wuerfelAusgeben(vector<int> zahlen) {
     // ASCII Code fuer obere Reihe - Wuerfelbegrenzung
-    for (int a = 0; a < (int) zahlen.size(); a++) {
+    for (size_t a = 0; a < static_cast<unsigned>(zahlen.size()); a++) {
         printf("%c%c%c\t", 218, 196, 191);
     }
     printf("\n");
     // Mittlere Reihe - Wuerfelseiten + Zahl
-    for (int a = 0; a < (int) zahlen.size(); a++) {
+    for (size_t a = 0; a < static_cast<unsigned>(zahlen.size()); a++) {
         printf("%c%d%c\t", 179, zahlen[a], 179);
     }
     printf("\n");
     // ASCII Code fuer untere Reihe - Wuerfelbegrenzung
-    for (int a = 0; a < (int) zahlen.size(); a++) {
+    for (size_t a = 0; a < static_cast<unsigned>(zahlen.size()); a++) {
         printf("%c%c%c\t", 192, 196, 217);
     }
     printf("\n");
     printf("Nummern\n");
-    for (int a = 0; a < (int) zahlen.size(); a++) {
+    for (size_t a = 0; a < static_cast<unsigned>(zahlen.size()); a++) {
         printf(" %d \t", a + 1);
     }
     printf("\n\n");

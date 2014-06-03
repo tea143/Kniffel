@@ -12,9 +12,12 @@
 
 class Kniffel : public Kategorie {
 public:
+	//Konstruktor:
     Kniffel();
+    //Destruktor:
     ~Kniffel();
-    int punkteBerechnen(const std::vector<int>&);
+
+    virtual int punkteBerechnen(const std::vector<int>&) override;
 
 };
 

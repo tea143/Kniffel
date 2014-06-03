@@ -13,13 +13,15 @@
 class Viererpasch : public Kategorie {
 
 public:
+	//Konstruktor:
     Viererpasch();
+    //Destruktor:
     ~Viererpasch();
-    int punkteBerechnen(const std::vector<int>&);
+
+    virtual int punkteBerechnen(const std::vector<int>&) override;
 
 private:
-    std::vector<int> wuerfelAugen;
-    bool wuerfelGleich(int, int, int, int);
+    bool wuerfelGleich(std::vector<int> wuerfelAugen, int, int, int, int);
 };
 
 #endif	/* VIERERPASCH_H */

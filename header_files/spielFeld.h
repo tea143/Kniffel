@@ -10,7 +10,6 @@
 
 #define SPIELRUNDEN 13
 
-#include <stdio.h>
 #include <cstddef>
 
 #include "spieler.h"
@@ -25,17 +24,17 @@ public:
     ~SpielFeld();
 
     const size_t getSpielerAnzahl() const;
-    std::vector<Spieler>& spielerKreieren();
+    const std::vector<Spieler*>& getSpielerListe() const;
+    std::vector<Spieler*>& spielerKreieren();
+    void spielerAnzeigen();
     void spielen();
     void ergebnisErmitteln();
-    void spielfeldAufraemen(std::vector<Spieler> spielerListe);
-    void spielerAnzeigen();
-    const std::vector<Spieler>& getSpielerListe() const;
+    void spielfeldAufraemen(std::vector<Spieler*> spielerListe);
 
 private:
     size_t spielerAnzahl;
     EinAusgabe io;
-    std::vector<Spieler> spielerListe;
+    std::vector<Spieler*> spielerListe;
 };
 
 #endif /* SPIELFELD_H_ */

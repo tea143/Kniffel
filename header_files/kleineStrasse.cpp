@@ -2,16 +2,16 @@
 
 KleineStrasse::KleineStrasse()
 	: Kategorie("Kleine Stra\xE1 \be"){
+	//std::cout << getName() << "-Objekt wurde erzeugt.\n";
 }
 
 KleineStrasse::~KleineStrasse() {
-	std::cout << getName() << "-Objekt wurde beendet.\n";
+	//std::cout << getName() << "-Objekt wurde beendet.\n";
 }
 
 int KleineStrasse::punkteBerechnen(const std::vector<int> &augen) {
     punktzahl = 0;
     std::vector<int> temp = augen;
-
     //doppelte Werte loeschen
     std::vector<int>::iterator it;
     it = std::unique(temp.begin(), temp.end());
