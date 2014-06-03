@@ -14,7 +14,4 @@ int main() {
     spielFeld.spielen();
     spielFeld.ergebnisErmitteln();
     spielFeld.spielfeldAufraemen(spielerListe);
-    for (auto spieler : spielerListe) {
-		delete spieler;
-	}
 }

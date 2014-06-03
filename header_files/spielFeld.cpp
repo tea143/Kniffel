@@ -78,4 +78,7 @@ void SpielFeld::spielfeldAufraemen(std::vector<Spieler*> spielerListe) {
 	for (size_t i = 0; i < spielerListe.size(); ++i) {
 		spielerListe[i]->kategorieFreisetzen(spielerListe[i]->getKategorienListe());
 	}
+	for (auto spieler : spielerListe) {
+		delete spieler;
+	}
 }
