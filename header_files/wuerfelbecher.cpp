@@ -13,7 +13,7 @@ Wuerfelbecher::Wuerfelbecher() {
 }
 
 Wuerfelbecher::~Wuerfelbecher() {
-    //std::cout << "W\x81 \brfelbecher-Objekt wurde beendet.\n";
+    std::cout << "W\x81 \brfelbecher-Objekt wurde beendet.\n";
 }
 
 vector<int> Wuerfelbecher::schuetteln(int anzahlWuerfel) {

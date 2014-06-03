@@ -28,6 +28,7 @@ public:
     std::vector<Spieler>& spielerKreieren();
     void spielen();
     void ergebnisErmitteln();
+    void spielfeldAufraemen(std::vector<Spieler> spielerListe);
     void spielerAnzeigen();
     const std::vector<Spieler>& getSpielerListe() const;
 

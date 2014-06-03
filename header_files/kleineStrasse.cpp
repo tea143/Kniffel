@@ -5,7 +5,7 @@ KleineStrasse::KleineStrasse()
 }
 
 KleineStrasse::~KleineStrasse() {
-	//std::cout << "KleineStrasse-Objekt wurde beendet.\n";
+	std::cout << getName() << "-Objekt wurde beendet.\n";
 }
 
 int KleineStrasse::punkteBerechnen(const std::vector<int> &augen) {

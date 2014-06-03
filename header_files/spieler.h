@@ -25,12 +25,13 @@ public:
 	~Spieler();
 
 	const std::string& getName() const;
-        const int getPunktzahl() const;
-        bool punktzahlErmitteln(int , const std::vector<int>&);
-        void bonusErmitteln();
-        const std::vector<Kategorie*>& getKategorienListe() const;
-        void printFreieKategorien() const;
+    const int getPunktzahl() const;
+    bool punktzahlErmitteln(int , const std::vector<int>&);
+    void bonusErmitteln();
+    const std::vector<Kategorie*>& getKategorienListe() const;
+    void printFreieKategorien() const;
 	void setName(const std::string&);
+	void kategorieFreisetzen(std::vector<Kategorie*> kategorienListe);
 
 private:
 	std::string name;

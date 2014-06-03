@@ -5,13 +5,12 @@ Viererpasch::Viererpasch()
 }
 
 Viererpasch::~Viererpasch() {
-	//std::cout << "Viererpasch-Objekt wurde beendet.\n";
+	std::cout << getName() << "-Objekt wurde beendet.\n";
 }
 
 int Viererpasch::punkteBerechnen(const std::vector<int> &augen) {
     gesetzt = true;
     wuerfelAugen = augen;
-    //sort(wuerfelAugen.begin(), wuerfelAugen.end(), greater<int>());
     std::sort(wuerfelAugen.begin(), wuerfelAugen.end());
 
     if (wuerfelGleich(0,1,2,3) || wuerfelGleich(1,2,3,4)) {

@@ -14,7 +14,7 @@ EinAusgabe::EinAusgabe() {
 }
 
 EinAusgabe::~EinAusgabe() {
-    //std::cout << "EinAusgabe-Objekt wurde beendet.\n";
+    std::cout << "EinAusgabe-Objekt wurde beendet.\n";
 }
 
 size_t EinAusgabe::readNumberBetween(int anfang, int ende) {

@@ -6,6 +6,7 @@ SpielFeld::SpielFeld(size_t anzahl)
 }
 
 SpielFeld::~SpielFeld() {
+	std::cout << "SpielFeld-Objekt wurde beendet.\n";
 }
 
 const size_t SpielFeld::getSpielerAnzahl() const {
@@ -67,4 +68,15 @@ void SpielFeld::ergebnisErmitteln() {
             std::cout << spieler.getName() << std::endl;
         }
     }
+}
+
+/**
+ * Bevor das Programm beendet, muss das Spielfeld aufgeraeumt werden.
+ *
+ * @param spielerListe
+ */
+void SpielFeld::spielfeldAufraemen(std::vector<Spieler> spielerListe) {
+	for (size_t i = 0; i < spielerListe.size(); ++i) {
+		spielerListe[i].kategorieFreisetzen(spielerListe[i].getKategorienListe());
+	}
 }

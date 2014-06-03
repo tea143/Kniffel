@@ -8,7 +8,7 @@ EinerBisSechser::EinerBisSechser(int gesetzteZahl_, std::string name_)
 }
 
 EinerBisSechser::~EinerBisSechser() {
-    //std::cout << "EinerBisSechser-Objekt wurde beendet.\n";
+    std::cout << getName() << "-Objekt wurde beendet.\n";
 }
 
 int EinerBisSechser::punkteBerechnen(const std::vector<int> &augen) {

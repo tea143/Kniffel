@@ -5,7 +5,7 @@ Kniffel::Kniffel()
 }
 
 Kniffel::~Kniffel() {
-	//std::cout << "Kniffel-Objekt wurde beendet.\n";
+	std::cout << getName() << "-Objekt wurde beendet.\n";
 }
 
 int Kniffel::punkteBerechnen(const std::vector<int> &augen) {

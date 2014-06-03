@@ -5,6 +5,7 @@ Dreierpasch::Dreierpasch()
 }
         
 Dreierpasch::~Dreierpasch() {
+	std::cout << getName() << "-Objekt wurde beendet.\n";
 }
 
 int Dreierpasch::punkteBerechnen(const std::vector<int> &augen) {
