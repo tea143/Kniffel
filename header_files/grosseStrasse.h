@@ -18,7 +18,7 @@ public:
     //Destruktor
     ~GrosseStrasse();
 
-    virtual int punkteBerechnen(const std::vector<int>&) override;
+    virtual unsigned int punkteBerechnen(const std::vector<unsigned int>&) override;
 };
 
 

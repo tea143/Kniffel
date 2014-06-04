@@ -17,7 +17,7 @@ public:
     //Destruktor:
     ~Kniffel();
 
-    virtual int punkteBerechnen(const std::vector<int>&) override;
+    virtual unsigned int punkteBerechnen(const std::vector<unsigned int>&) override;
 
 };
 

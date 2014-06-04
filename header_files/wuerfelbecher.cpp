@@ -17,7 +17,7 @@ Wuerfelbecher::~Wuerfelbecher() {
     //std::cout << "W\x81 \brfelbecher-Objekt wurde beendet.\n";
 }
 
-vector<int> Wuerfelbecher::schuetteln(int anzahlWuerfel) {
+vector<unsigned int> Wuerfelbecher::schuetteln(unsigned int anzahlWuerfel) {
     wuerfelbecher.clear();
     for (size_t i = 0; i < static_cast<unsigned> (anzahlWuerfel); i++) {
         wuerfelbecher.push_back(Zufallszahl::rnd(1, 6));
@@ -26,7 +26,7 @@ vector<int> Wuerfelbecher::schuetteln(int anzahlWuerfel) {
 }
 
 void Wuerfelbecher::wuerfelAuswaehlen() {
-    int nummer;
+    unsigned int nummer;
     for (size_t i = 0; i < wuerfelbecher.size(); i++) {
         cout << "Gib eine W\x81 \brfelnummer ein:" << endl;
         nummer = io.readNumberBetween(1, 5);
@@ -35,12 +35,12 @@ void Wuerfelbecher::wuerfelAuswaehlen() {
     }
 }
 
-const vector<int>& Wuerfelbecher::getErgebnis() const {
+const vector<unsigned int>& Wuerfelbecher::getErgebnis() const {
     return ergebnis;
 }
 
 void Wuerfelbecher::wuerfeln() {
-    int anzahl;
+    unsigned int anzahl;
     char antwort;
     for (size_t versuch = 1; versuch < 4; versuch++) {
         if (versuch == 1) {

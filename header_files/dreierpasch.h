@@ -17,11 +17,10 @@ public:
     Dreierpasch();
     //Destruktor:
     ~Dreierpasch();
-
-    virtual int punkteBerechnen(const std::vector<int>&) override;
+    virtual unsigned int punkteBerechnen(const std::vector<unsigned int>&) override;
 
 private:
-    bool wuerfelGleich(std::vector<int> wuerfelAugen, int, int, int);
+    bool wuerfelGleich(std::vector<unsigned int> wuerfelAugen, unsigned int, unsigned int, unsigned int);
 };
 
 

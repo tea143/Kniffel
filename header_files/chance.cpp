@@ -1,8 +1,7 @@
 #include "chance.h"
 
 Chance::Chance()
-	: Kategorie("Chance"),
-	  gesetzt {false} {
+	: Kategorie("Chance"){
 	//std::cout << getName() << "-Objekt wurde erzeugt.\n";
 }
 
@@ -10,10 +9,10 @@ Chance::~Chance() {
 	//std::cout << getName() << "-Objekt wurde beendet.\n";
 }
 
-int Chance::punkteBerechnen(const std::vector<int> &augen) {
+unsigned int Chance::punkteBerechnen(const std::vector<unsigned int> &augen) {
     punktzahl = 0;
     gesetzt = true;
-    std::vector<int> temp = augen;
+    std::vector<unsigned int> temp = augen;
     for (size_t i = 0; i < temp.size(); i++) {
         punktzahl = punktzahl + temp[i];
     }

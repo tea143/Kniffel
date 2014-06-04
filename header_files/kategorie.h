@@ -18,15 +18,15 @@ class Kategorie {
 public:
     Kategorie(const std::string&);
     virtual ~Kategorie() = default;
-    virtual int punkteBerechnen(const std::vector<int>&) = 0;
+    virtual unsigned int punkteBerechnen(const std::vector<unsigned int>&) = 0;
     const std::string& getName() const;
     void setName(const std::string&);
-    int getPunktzahl() const;
-    void setPunktzahl(int);
+    unsigned int getPunktzahl() const;
+    void setPunktzahl(unsigned int);
     bool isGesetzt() const;
 
 protected:
-    int punktzahl = 0;
+    unsigned int punktzahl = 0;
     bool gesetzt = false;
 
 private:

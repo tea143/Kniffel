@@ -14,16 +14,16 @@ class EinerBisSechser : public Kategorie {
 
 public:
 	//Konstruktor:
-	EinerBisSechser(int, std::string);
+	EinerBisSechser(unsigned int, std::string);
 	//Destruktor:
 	~EinerBisSechser();
 
-	virtual int punkteBerechnen(const std::vector<int>&) override;
-	int getGesetzteZahl() const;
-	void setGesetzteZahl(int gesetzteZahl);
+	virtual unsigned int punkteBerechnen(const std::vector<unsigned int>&) override;
+	unsigned int getGesetzteZahl() const;
+	void setGesetzteZahl(unsigned int gesetzteZahl);
 
 private:
-	int gesetzteZahl;
+	unsigned int gesetzteZahl;
 };
 
 #endif	/* EINERBISSECHSER_H */

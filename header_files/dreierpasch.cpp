@@ -9,9 +9,9 @@ Dreierpasch::~Dreierpasch() {
 	//std::cout << getName() << "-Objekt wurde beendet.\n";
 }
 
-int Dreierpasch::punkteBerechnen(const std::vector<int> &augen) {
+unsigned int Dreierpasch::punkteBerechnen(const std::vector<unsigned int> &augen) {
     gesetzt = true;
-    std::vector<int> temp = augen;
+    std::vector<unsigned int> temp = augen;
     std::sort(temp.begin(), temp.end());
     if (wuerfelGleich(temp, 0, 1, 2) || wuerfelGleich(temp, 1, 2, 3) || wuerfelGleich(temp, 2, 3, 4)) {
         for (size_t i = 0; i < temp.size(); i++) {
@@ -19,10 +19,11 @@ int Dreierpasch::punkteBerechnen(const std::vector<int> &augen) {
         }
         return punktzahl;
     }
+    gesetzt = true;
     return 0;
 }
 
 
-bool Dreierpasch::wuerfelGleich(std::vector<int> wuerfelAugen, int index1, int index2, int index3) {
+bool Dreierpasch::wuerfelGleich(std::vector<unsigned int> wuerfelAugen, unsigned int index1, unsigned int index2, unsigned int index3) {
     return wuerfelAugen[index1] == wuerfelAugen[index2] && wuerfelAugen[index2] == wuerfelAugen[index3];
 }

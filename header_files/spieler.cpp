@@ -7,10 +7,7 @@
 
 #include "spieler.h"
 
-Spieler::Spieler(const std::string& n)
-: name {
-    n
-}
+Spieler::Spieler(const std::string& n) : name {n}
 {
     //std::cout << getName() << "-Spieler-Objekt wurde erzeugt.\n";
     kategorienListe.push_back(new EinerBisSechser(1, "Einer"));
@@ -24,15 +21,12 @@ Spieler::Spieler(const std::string& n)
     kategorienListe.push_back(new Fullhouse());
     kategorienListe.push_back(new GrosseStrasse());
     kategorienListe.push_back(new KleineStrasse());
-    kategorienListe.push_back(new Kniffel());    
+    kategorienListe.push_back(new Kniffel());
     kategorienListe.push_back(new Chance());
-
-    for (size_t i = 0; i < kategorienListe.size(); i++) {
-        kategorieErledigt.push_back(false);
-    }
 }
 
 Spieler::~Spieler() {
+    //kategorienFreisetzen();
     //std::cout << getName() << "-Spieler-Objekt wurde beendet.\n";
 }
 
@@ -44,18 +38,18 @@ void Spieler::setName(const std::string& name) {
     this->name = name;
 }
 
-const int Spieler::getPunktzahl() const {
+unsigned int Spieler::getPunktzahl() const {
     return punktzahl;
 }
 
-bool Spieler::punktzahlErmitteln(const int kategorienNummer, const std::vector<int>& wuerfel) {
+bool Spieler::punktzahlErmitteln(unsigned int kategorienNummer, const std::vector<unsigned int>& wuerfel) {
     if (kategorienListe.at(kategorienNummer - 1)->isGesetzt()) {
         std::cout << "Kategorie " << kategorienListe.at(kategorienNummer - 1)->getName() << " ist bereits gesetzt." << std::endl;
         std::cout << "Bitte w\x84 \bhle eine andere Kategorie!" << std::endl;
         return false;
     } else {
         kategorienListe.at(kategorienNummer - 1)->punkteBerechnen(wuerfel);
-        kategorieErledigt.at(kategorienNummer - 1) = true;
+        //kategorieErledigt.at(kategorienNummer - 1) = true;
         std::cout << "Erreichte Punkte in Kategorie " << kategorienListe.at(kategorienNummer - 1)->getName() << " ";
         std::cout << kategorienListe.at(kategorienNummer - 1)->getPunktzahl() << std::endl;
         punktzahl += kategorienListe.at(kategorienNummer - 1)->getPunktzahl();
@@ -64,8 +58,8 @@ bool Spieler::punktzahlErmitteln(const int kategorienNummer, const std::vector<i
 }
 
 void Spieler::bonusErmitteln() {
-    int punkteFuerBonus = 0;
-    for (auto& kategorie : kategorienListe) {
+    unsigned int punkteFuerBonus = 0;
+    for (const auto& kategorie : kategorienListe) {
         if (typeid (*kategorie) == typeid (EinerBisSechser)) {
             punkteFuerBonus += kategorie->getPunktzahl();
             if (punkteFuerBonus >= 63) {
@@ -84,7 +78,7 @@ void Spieler::printFreieKategorien() const {
     std::cout << std::endl << "Kategorien: " << std::endl;
     for (size_t i = 0; i < kategorienListe.size(); i++) {
         std::cout << i + 1 << ". " << kategorienListe.at(i)->getName() << ":\t";
-        if (kategorieErledigt.at(i)) {
+        if (kategorienListe.at(i)->isGesetzt()) {
             std::cout << "Punktzahl: " << kategorienListe.at(i)->getPunktzahl();
         } else {
             std::cout << "offen";
@@ -99,8 +93,9 @@ void Spieler::printFreieKategorien() const {
  *
  * @param kategorienListe
  */
-void Spieler::kategorieFreisetzen(std::vector<Kategorie*> kategorienListe) {
-	for (auto k : kategorienListe) {
-		delete k;
-	}
+void Spieler::kategorienFreisetzen() {
+    for (auto& k : kategorienListe) {
+        std::cout << k->getName() << " wird geloescht!" << std::endl;
+        delete k;
+    }
 }

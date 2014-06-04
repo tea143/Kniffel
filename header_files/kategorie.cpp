@@ -13,11 +13,11 @@ void Kategorie::setName(const std::string& n) {
     name = n;
 }
 
-int Kategorie::getPunktzahl() const {
+unsigned int Kategorie::getPunktzahl() const {
     return punktzahl;
 }
 
-void Kategorie::setPunktzahl(int p) {
+void Kategorie::setPunktzahl(unsigned int p) {
     punktzahl = p;
 }
 

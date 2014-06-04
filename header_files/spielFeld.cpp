@@ -1,19 +1,22 @@
 #include "spielFeld.h"
 
-SpielFeld::SpielFeld(size_t anzahl)
-: spielerAnzahl {anzahl}{
-	//std::cout << "SpielFeld-Objekt wurde erzeugt.\n";
+SpielFeld::SpielFeld(unsigned int anzahl)
+: spielerAnzahl {
+    anzahl
+}
+{
+    //std::cout << "SpielFeld-Objekt wurde erzeugt.\n";
 }
 
 SpielFeld::~SpielFeld() {
-	//std::cout << "SpielFeld-Objekt wurde beendet.\n";
+    //std::cout << "SpielFeld-Objekt wurde beendet.\n";
 }
 
-const size_t SpielFeld::getSpielerAnzahl() const {
+unsigned int SpielFeld::getSpielerAnzahl() const {
     return spielerAnzahl;
 }
 
-std::vector<Spieler>& SpielFeld::spielerKreieren() {
+void SpielFeld::spielerKreieren() {
     std::string name;
     for (size_t i = 0; i < spielerAnzahl; i++) {
         std::cout << "Geben Sie den Namen des " << i + 1 << ". Spielers ein: " << std::endl;
@@ -21,11 +24,10 @@ std::vector<Spieler>& SpielFeld::spielerKreieren() {
         Spieler spieler(name);
         spielerListe.push_back(spieler);
     }
-    return spielerListe;
 }
 
-void SpielFeld::spielerAnzeigen() {
-    for (auto& spieler : spielerListe) {
+void SpielFeld::spielerAnzeigen() const {
+    for (const auto& spieler : spielerListe) {
         std::cout << "Spieler: " << spieler.getName() << std::endl;
     }
 }
@@ -45,7 +47,7 @@ void SpielFeld::spielen() {
             std::cout << "W\x84 \bhle eine freie Kategorie (Zahl): " << std::endl;
             bool freieKategorie = false;
             while (!freieKategorie) {
-                size_t kategorie = io.readNumberBetween(1, SPIELRUNDEN);
+                unsigned int kategorie = io.readNumberBetween(1, SPIELRUNDEN);
                 freieKategorie = spieler.punktzahlErmitteln(kategorie, becher.getErgebnis());
             }
         }
@@ -54,7 +56,7 @@ void SpielFeld::spielen() {
 
 void SpielFeld::ergebnisErmitteln() {
     std::cout << std::endl << std::endl << "ERGEBNIS: " << std::endl;
-    size_t gewinnerPunktzahl = 0;
+    unsigned int gewinnerPunktzahl = 0;
     for (auto& spieler : spielerListe) {
         spieler.bonusErmitteln();
         std::cout << spieler.getName() << " hat " << spieler.getPunktzahl() << " Punkte erreicht." << std::endl;
@@ -63,7 +65,7 @@ void SpielFeld::ergebnisErmitteln() {
         }
     }
     std::cout << std::endl << "GEWINNER: " << std::endl;
-    for (auto& spieler : spielerListe) {
+    for (const auto& spieler : spielerListe) {
         if (gewinnerPunktzahl == static_cast<unsigned> (spieler.getPunktzahl())) {
             std::cout << spieler.getName() << std::endl;
         }
@@ -75,8 +77,9 @@ void SpielFeld::ergebnisErmitteln() {
  *
  * @param spielerListe
  */
-void SpielFeld::spielfeldAufraemen(std::vector<Spieler> spielerListe) {
-	for (size_t i = 0; i < spielerListe.size(); ++i) {
-		spielerListe[i].kategorieFreisetzen(spielerListe[i].getKategorienListe());
-	}
+void SpielFeld::spielfeldAufraeumen() {
+
+    for (auto& spieler : spielerListe) {
+        spieler.kategorienFreisetzen();
+    }
 }

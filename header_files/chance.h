@@ -12,17 +12,9 @@
 
 class Chance : public Kategorie {
 public:
-	//Konstruktor:
     Chance();
-    //Destruktor:
     ~Chance();
-
-    virtual int punkteBerechnen(const std::vector<int>&) override;
-
-private:
-    //???
-    //diese Variable ist bereits in der Kategorie-Klasse deklariert & initialisiert
-    bool gesetzt;
+    virtual unsigned int punkteBerechnen(const std::vector<unsigned int>&) override;
 };
 
 

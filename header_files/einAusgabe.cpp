@@ -17,17 +17,17 @@ EinAusgabe::~EinAusgabe() {
     //std::cout << "EinAusgabe-Objekt wurde beendet.\n";
 }
 
-size_t EinAusgabe::readNumberBetween(int anfang, int ende) {
-    size_t anzahl = 0;
+unsigned int EinAusgabe::readNumberBetween(int anfang, int ende) const {
+    unsigned int anzahl = 0;
     while (!(cin >> anzahl) || anzahl > static_cast<unsigned> (ende)) {
-        cout << "Gibt eine Zahl zwischen " << anfang << " und " << ende << " und ein!" << endl;
+        cout << "Gib eine Zahl zwischen " << anfang << " und " << ende << " und ein!" << endl;
         cin.clear();
         cin.ignore(numeric_limits<streamsize>::max(), '\n');
     }
     return anzahl;
 }
 
-void EinAusgabe::wuerfelAusgeben(vector<int> zahlen) {
+void EinAusgabe::wuerfelAusgeben(vector<unsigned int> zahlen) const{
     // ASCII Code fuer obere Reihe - Wuerfelbegrenzung
     for (size_t a = 0; a < static_cast<unsigned>(zahlen.size()); a++) {
         printf("%c%c%c\t", 218, 196, 191);

@@ -19,25 +19,24 @@
 #include "chance.h"
 
 class Spieler {
-
 public:
-	Spieler(const std::string&);
-	~Spieler();
+    Spieler(const std::string&);
+    ~Spieler();
 
-	const std::string& getName() const;
-    const int getPunktzahl() const;
-    bool punktzahlErmitteln(int , const std::vector<int>&);
+    const std::string& getName() const;
+    unsigned int getPunktzahl() const;
+    bool punktzahlErmitteln(unsigned int, const std::vector<unsigned int>&);
     void bonusErmitteln();
     const std::vector<Kategorie*>& getKategorienListe() const;
     void printFreieKategorien() const;
-	void setName(const std::string&);
-	void kategorieFreisetzen(std::vector<Kategorie*> kategorienListe);
+    void setName(const std::string&);
+    void kategorienFreisetzen();
 
 private:
-	std::string name;
-        std::vector<Kategorie*> kategorienListe;
-        std::vector<bool> kategorieErledigt;
-        int punktzahl = 0;
+    std::string name;
+    std::vector<Kategorie*> kategorienListe;
+    //std::vector<bool> kategorieErledigt;
+    unsigned int punktzahl = 0;
 };
 
 

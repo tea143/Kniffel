@@ -18,8 +18,8 @@ public:
     EinAusgabe();
     virtual ~EinAusgabe();
 
-    size_t readNumberBetween(int, int);
-    void wuerfelAusgeben(std::vector<int>);
+    unsigned int readNumberBetween(int, int) const;
+    void wuerfelAusgeben(std::vector<unsigned int>) const;
 
 };
 
