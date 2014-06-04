@@ -49,16 +49,16 @@ const int Spieler::getPunktzahl() const {
 }
 
 bool Spieler::punktzahlErmitteln(const int kategorienNummer, const std::vector<int>& wuerfel) {
-    if (kategorienListe.at(kategorienNummer)->isGesetzt()) {
-        std::cout << "Kategorie " << kategorienListe.at(kategorienNummer)->getName() << " ist bereits gesetzt." << std::endl;
+    if (kategorienListe.at(kategorienNummer - 1)->isGesetzt()) {
+        std::cout << "Kategorie " << kategorienListe.at(kategorienNummer - 1)->getName() << " ist bereits gesetzt." << std::endl;
         std::cout << "Bitte w\x84 \bhle eine andere Kategorie!" << std::endl;
         return false;
     } else {
-        kategorienListe.at(kategorienNummer)->punkteBerechnen(wuerfel);
-        kategorieErledigt.at(kategorienNummer) = true;
-        std::cout << "Erreichte Punkte in Kategorie " << kategorienListe.at(kategorienNummer)->getName() << " ";
-        std::cout << kategorienListe.at(kategorienNummer)->getPunktzahl() << std::endl;
-        punktzahl += kategorienListe.at(kategorienNummer)->getPunktzahl();
+        kategorienListe.at(kategorienNummer - 1)->punkteBerechnen(wuerfel);
+        kategorieErledigt.at(kategorienNummer - 1) = true;
+        std::cout << "Erreichte Punkte in Kategorie " << kategorienListe.at(kategorienNummer - 1)->getName() << " ";
+        std::cout << kategorienListe.at(kategorienNummer - 1)->getPunktzahl() << std::endl;
+        punktzahl += kategorienListe.at(kategorienNummer - 1)->getPunktzahl();
         return true;
     }
 }
@@ -83,7 +83,7 @@ const std::vector<Kategorie*>& Spieler::getKategorienListe() const {
 void Spieler::printFreieKategorien() const {
     std::cout << std::endl << "Kategorien: " << std::endl;
     for (size_t i = 0; i < kategorienListe.size(); i++) {
-        std::cout << i << ". " << kategorienListe.at(i)->getName() << ":\t";
+        std::cout << i + 1 << ". " << kategorienListe.at(i)->getName() << ":\t";
         if (kategorieErledigt.at(i)) {
             std::cout << "Punktzahl: " << kategorienListe.at(i)->getPunktzahl();
         } else {

@@ -56,9 +56,7 @@ void Wuerfelbecher::wuerfeln() {
                 cout << endl << "Mit wie vielen W\x81 \brfel m\x94 \bchtest du w\x81 \brfeln?" << endl;
                 anzahl = io.readNumberBetween(1, 5);
                 schuetteln(anzahl);
-                if (anzahl < 5) {
-                	wuerfelAuswaehlen();
-				}
+                wuerfelAuswaehlen();
             } else {
                 versuch = 4;
             }

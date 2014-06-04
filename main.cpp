@@ -10,7 +10,7 @@ int main() {
     EinAusgabe io;
     size_t spielerAnzahl = io.readNumberBetween(1,5);
     SpielFeld spielFeld(spielerAnzahl);
-    vector<Spieler*> spielerListe = spielFeld.spielerKreieren();
+    vector<Spieler> spielerListe = spielFeld.spielerKreieren();
     spielFeld.spielen();
     spielFeld.ergebnisErmitteln();
     spielFeld.spielfeldAufraemen(spielerListe);
