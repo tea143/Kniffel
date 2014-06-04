@@ -10,19 +10,19 @@
 Spieler::Spieler(const std::string& n) : name {n}
 {
     //std::cout << getName() << "-Spieler-Objekt wurde erzeugt.\n";
-    kategorienListe.push_back(new EinerBisSechser(1, "Einer"));
-    kategorienListe.push_back(new EinerBisSechser(2, "Zweier"));
-    kategorienListe.push_back(new EinerBisSechser(3, "Dreier"));
-    kategorienListe.push_back(new EinerBisSechser(4, "Vierer"));
-    kategorienListe.push_back(new EinerBisSechser(5, "F\x81 \bnfer"));
-    kategorienListe.push_back(new EinerBisSechser(6, "Sechser"));
-    kategorienListe.push_back(new Dreierpasch());
-    kategorienListe.push_back(new Viererpasch());
-    kategorienListe.push_back(new Fullhouse());
-    kategorienListe.push_back(new GrosseStrasse());
-    kategorienListe.push_back(new KleineStrasse());
-    kategorienListe.push_back(new Kniffel());
-    kategorienListe.push_back(new Chance());
+    kategorienListe.push_back(std::shared_ptr<Kategorie>(new EinerBisSechser(1, "Einer")));
+    kategorienListe.push_back(std::shared_ptr<Kategorie>(new EinerBisSechser(2, "Zweier")));
+    kategorienListe.push_back(std::shared_ptr<Kategorie>(new EinerBisSechser(3, "Dreier")));
+    kategorienListe.push_back(std::shared_ptr<Kategorie>(new EinerBisSechser(4, "Vierer")));
+    kategorienListe.push_back(std::shared_ptr<Kategorie>(new EinerBisSechser(5, "F\x81 \bnfer")));
+    kategorienListe.push_back(std::shared_ptr<Kategorie>(new EinerBisSechser(6, "Sechser")));
+    kategorienListe.push_back(std::shared_ptr<Kategorie>(new Dreierpasch()));
+    kategorienListe.push_back(std::shared_ptr<Kategorie>(new Viererpasch()));
+    kategorienListe.push_back(std::shared_ptr<Kategorie>(new Fullhouse()));
+    kategorienListe.push_back(std::shared_ptr<Kategorie>(new GrosseStrasse()));
+    kategorienListe.push_back(std::shared_ptr<Kategorie>(new KleineStrasse()));
+    kategorienListe.push_back(std::shared_ptr<Kategorie>(new Kniffel()));
+    kategorienListe.push_back(std::shared_ptr<Kategorie>(new Chance()));
 }
 
 Spieler::~Spieler() {
@@ -70,7 +70,7 @@ void Spieler::bonusErmitteln() {
     }
 }
 
-const std::vector<Kategorie*>& Spieler::getKategorienListe() const {
+const std::vector<std::shared_ptr<Kategorie>>& Spieler::getKategorienListe() const {
     return kategorienListe;
 }
 
@@ -93,9 +93,9 @@ void Spieler::printFreieKategorien() const {
  *
  * @param kategorienListe
  */
-void Spieler::kategorienFreisetzen() {
+/*void Spieler::kategorienFreisetzen() {
     for (auto& k : kategorienListe) {
         std::cout << k->getName() << " wird geloescht!" << std::endl;
         delete k;
     }
-}
+}*/

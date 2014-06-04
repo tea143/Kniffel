@@ -8,6 +8,7 @@
 #ifndef SPIELER_H_
 #define SPIELER_H_
 
+#include <memory>
 #include "kategorie.h"
 #include "einerBisSechser.h"
 #include "dreierpasch.h"
@@ -27,14 +28,14 @@ public:
     unsigned int getPunktzahl() const;
     bool punktzahlErmitteln(unsigned int, const std::vector<unsigned int>&);
     void bonusErmitteln();
-    const std::vector<Kategorie*>& getKategorienListe() const;
+    const std::vector<std::shared_ptr<Kategorie>>& getKategorienListe() const;
     void printFreieKategorien() const;
     void setName(const std::string&);
     void kategorienFreisetzen();
 
 private:
     std::string name;
-    std::vector<Kategorie*> kategorienListe;
+    std::vector<std::shared_ptr<Kategorie>> kategorienListe;
     //std::vector<bool> kategorieErledigt;
     unsigned int punktzahl = 0;
 };

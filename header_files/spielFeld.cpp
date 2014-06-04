@@ -77,9 +77,9 @@ void SpielFeld::ergebnisErmitteln() {
  *
  * @param spielerListe
  */
-void SpielFeld::spielfeldAufraeumen() {
+/*void SpielFeld::spielfeldAufraeumen() {
 
     for (auto& spieler : spielerListe) {
         spieler.kategorienFreisetzen();
     }
-}
+}*/
