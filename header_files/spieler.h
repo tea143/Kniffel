@@ -28,15 +28,14 @@ public:
     unsigned int getPunktzahl() const;
     bool punktzahlErmitteln(unsigned int, const std::vector<unsigned int>&);
     void bonusErmitteln();
-    const std::vector<std::shared_ptr<Kategorie>>& getKategorienListe() const;
+    const std::vector<std::unique_ptr<Kategorie>>& getKategorienListe() const;
     void printFreieKategorien() const;
     void setName(const std::string&);
     void kategorienFreisetzen();
 
 private:
     std::string name;
-    std::vector<std::shared_ptr<Kategorie>> kategorienListe;
-    //std::vector<bool> kategorieErledigt;
+    std::vector<std::unique_ptr<Kategorie>> kategorienListe;
     unsigned int punktzahl = 0;
 };
 

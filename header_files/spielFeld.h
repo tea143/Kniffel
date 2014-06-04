@@ -11,6 +11,7 @@
 #define SPIELRUNDEN 13
 
 #include <cstddef>
+#include <memory>
 
 #include "spieler.h"
 #include "einAusgabe.h"
@@ -24,7 +25,7 @@ public:
     ~SpielFeld();
 
     unsigned int getSpielerAnzahl() const;
-    const std::vector<Spieler>& getSpielerListe() const;
+    const std::vector<std::unique_ptr<Spieler>>& getSpielerListe() const;
     void spielerKreieren();
     void spielerAnzeigen() const;
     void spielen();
@@ -34,7 +35,7 @@ public:
 private:
     unsigned int spielerAnzahl;
     EinAusgabe io;
-    std::vector<Spieler> spielerListe;
+    std::vector<std::unique_ptr<Spieler>> spielerListe;
 };
 
 #endif /* SPIELFELD_H_ */

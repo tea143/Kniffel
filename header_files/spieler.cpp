@@ -10,19 +10,19 @@
 Spieler::Spieler(const std::string& n) : name {n}
 {
     //std::cout << getName() << "-Spieler-Objekt wurde erzeugt.\n";
-    kategorienListe.push_back(std::shared_ptr<Kategorie>(new EinerBisSechser(1, "Einer")));
-    kategorienListe.push_back(std::shared_ptr<Kategorie>(new EinerBisSechser(2, "Zweier")));
-    kategorienListe.push_back(std::shared_ptr<Kategorie>(new EinerBisSechser(3, "Dreier")));
-    kategorienListe.push_back(std::shared_ptr<Kategorie>(new EinerBisSechser(4, "Vierer")));
-    kategorienListe.push_back(std::shared_ptr<Kategorie>(new EinerBisSechser(5, "F\x81 \bnfer")));
-    kategorienListe.push_back(std::shared_ptr<Kategorie>(new EinerBisSechser(6, "Sechser")));
-    kategorienListe.push_back(std::shared_ptr<Kategorie>(new Dreierpasch()));
-    kategorienListe.push_back(std::shared_ptr<Kategorie>(new Viererpasch()));
-    kategorienListe.push_back(std::shared_ptr<Kategorie>(new Fullhouse()));
-    kategorienListe.push_back(std::shared_ptr<Kategorie>(new GrosseStrasse()));
-    kategorienListe.push_back(std::shared_ptr<Kategorie>(new KleineStrasse()));
-    kategorienListe.push_back(std::shared_ptr<Kategorie>(new Kniffel()));
-    kategorienListe.push_back(std::shared_ptr<Kategorie>(new Chance()));
+    kategorienListe.push_back(std::unique_ptr<Kategorie>(new EinerBisSechser(1, "Einer")));
+    kategorienListe.push_back(std::unique_ptr<Kategorie>(new EinerBisSechser(2, "Zweier")));
+    kategorienListe.push_back(std::unique_ptr<Kategorie>(new EinerBisSechser(3, "Dreier")));
+    kategorienListe.push_back(std::unique_ptr<Kategorie>(new EinerBisSechser(4, "Vierer")));
+    kategorienListe.push_back(std::unique_ptr<Kategorie>(new EinerBisSechser(5, "F\x81 \bnfer")));
+    kategorienListe.push_back(std::unique_ptr<Kategorie>(new EinerBisSechser(6, "Sechser")));
+    kategorienListe.push_back(std::unique_ptr<Kategorie>(new Dreierpasch()));
+    kategorienListe.push_back(std::unique_ptr<Kategorie>(new Viererpasch()));
+    kategorienListe.push_back(std::unique_ptr<Kategorie>(new Fullhouse()));
+    kategorienListe.push_back(std::unique_ptr<Kategorie>(new GrosseStrasse()));
+    kategorienListe.push_back(std::unique_ptr<Kategorie>(new KleineStrasse()));
+    kategorienListe.push_back(std::unique_ptr<Kategorie>(new Kniffel()));
+    kategorienListe.push_back(std::unique_ptr<Kategorie>(new Chance()));
 }
 
 Spieler::~Spieler() {
@@ -49,7 +49,6 @@ bool Spieler::punktzahlErmitteln(unsigned int kategorienNummer, const std::vecto
         return false;
     } else {
         kategorienListe.at(kategorienNummer - 1)->punkteBerechnen(wuerfel);
-        //kategorieErledigt.at(kategorienNummer - 1) = true;
         std::cout << "Erreichte Punkte in Kategorie " << kategorienListe.at(kategorienNummer - 1)->getName() << " ";
         std::cout << kategorienListe.at(kategorienNummer - 1)->getPunktzahl() << std::endl;
         punktzahl += kategorienListe.at(kategorienNummer - 1)->getPunktzahl();
@@ -70,7 +69,7 @@ void Spieler::bonusErmitteln() {
     }
 }
 
-const std::vector<std::shared_ptr<Kategorie>>& Spieler::getKategorienListe() const {
+const std::vector<std::unique_ptr<Kategorie>>& Spieler::getKategorienListe() const {
     return kategorienListe;
 }
 
