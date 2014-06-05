@@ -10,6 +10,7 @@ GrosseStrasse::~GrosseStrasse() {
 }
 
 unsigned int GrosseStrasse::punkteBerechnen(const std::vector<unsigned int> &augen) {
+	gesetzt = true;
     std::vector<unsigned int> temp = augen;
     std::sort(temp.begin(), temp.end());
     for (size_t i = 0; i < 4; i++) {
@@ -18,7 +19,6 @@ unsigned int GrosseStrasse::punkteBerechnen(const std::vector<unsigned int> &aug
             return punktzahl;
         }
     }
-    gesetzt = true;
     std::cout << "Gro\xE1 \be Stra\xE1 \be: ";
     return punktzahl = 40;
 }

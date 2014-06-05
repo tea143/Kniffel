@@ -10,9 +10,9 @@ Kniffel::~Kniffel() {
 }
 
 unsigned int Kniffel::punkteBerechnen(const std::vector<unsigned int> &augen) {
+	gesetzt = true;
     std::vector<unsigned int> temp = augen;
     if (temp[0] == temp[1] && temp[1] == temp[2] && temp[2] == temp[3] && temp[3] == temp[4]) {
-    	gesetzt = true;
         std::cout << "Kniffel: ";
         return punktzahl = 50;
     } else {

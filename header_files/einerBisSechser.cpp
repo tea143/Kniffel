@@ -13,6 +13,7 @@ EinerBisSechser::~EinerBisSechser() {
 }
 
 unsigned int EinerBisSechser::punkteBerechnen(const std::vector<unsigned int> &augen) {
+	gesetzt = true;
     std::vector<unsigned int> temp = augen;
     unsigned int gesuchteZahl = gesetzteZahl;
     std::sort(temp.begin(), temp.end());
@@ -22,9 +23,6 @@ unsigned int EinerBisSechser::punkteBerechnen(const std::vector<unsigned int> &a
             punktzahl = punktzahl + temp[i];
         }
     }
-    if (punktzahl != 0) {
-    	gesetzt = true;
-	}
     return punktzahl;
 }
 

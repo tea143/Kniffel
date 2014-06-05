@@ -10,6 +10,7 @@ KleineStrasse::~KleineStrasse() {
 }
 
 unsigned int KleineStrasse::punkteBerechnen(const std::vector<unsigned int> &augen) {
+	gesetzt = true;
     std::vector<unsigned int> temp = augen;
     //doppelte Werte loeschen
     std::vector<unsigned int>::iterator it;
@@ -27,7 +28,6 @@ unsigned int KleineStrasse::punkteBerechnen(const std::vector<unsigned int> &aug
                 }
             }
         }
-        gesetzt = true;
         std::cout << "Kleine Stra\xE1 \be: ";
         return punktzahl = 30;
     } else {
