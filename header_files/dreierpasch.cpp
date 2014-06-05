@@ -10,13 +10,13 @@ Dreierpasch::~Dreierpasch() {
 }
 
 unsigned int Dreierpasch::punkteBerechnen(const std::vector<unsigned int> &augen) {
-    gesetzt = true;
     std::vector<unsigned int> temp = augen;
     std::sort(temp.begin(), temp.end());
     if (wuerfelGleich(temp, 0, 1, 2) || wuerfelGleich(temp, 1, 2, 3) || wuerfelGleich(temp, 2, 3, 4)) {
         for (size_t i = 0; i < temp.size(); i++) {
             punktzahl = punktzahl + temp[i];
         }
+        gesetzt = true;
         return punktzahl;
     }
     return punktzahl;
