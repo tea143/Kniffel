@@ -10,16 +10,15 @@ Fullhouse::~Fullhouse(){
 }
 
 unsigned int Fullhouse::punkteBerechnen(const std::vector<unsigned int> &augen) {
-    punktzahl = 0;
     std::vector<unsigned int> temp = augen;
     std::sort(temp.begin(), temp.end());
     if ((temp[0] == temp[1] && temp[1] == temp[2] && temp[3] == temp[4]) ||
             (temp[0] == temp[1] && temp[2] == temp[3] && temp[3] == temp[4])) {
+        gesetzt = true;
         std::cout << "Full House: ";
         return punktzahl = 25;
     } else {
         std::cout << "Kein Full House (Zweierpasch + Dreierpasch)" << std::endl;
     }
-
-    return 0;
+    return punktzahl;
 }

@@ -1,7 +1,7 @@
 #include <iostream>
-#include "Spielfeld.h"
-#include "Spieler.h"
-#include "EinAusgabe.h"
+#include "header_files/Spielfeld.h"
+#include "header_files/Spieler.h"
+#include "header_files/EinAusgabe.h"
 
 using namespace std;
 
@@ -14,5 +14,4 @@ int main() {
     spielFeld.spielerKreieren();
     spielFeld.spielen();
     spielFeld.ergebnisErmitteln();
-    spielFeld.spielfeldAufraeumen();
 }

@@ -26,7 +26,6 @@ Spieler::Spieler(const std::string& n) : name {n}
 }
 
 Spieler::~Spieler() {
-    //kategorienFreisetzen();
     //std::cout << getName() << "-Spieler-Objekt wurde beendet.\n";
 }
 
@@ -86,15 +85,3 @@ void Spieler::printFreieKategorien() const {
     }
 }
 
-/**
- * Bevor das Spielfeld aufgeraemt wird, muss die Kategorieliste freigesetzt werden,
- * damit keine "verwitweten" Objekte nach der Programmbeendung bleiben.
- *
- * @param kategorienListe
- */
-/*void Spieler::kategorienFreisetzen() {
-    for (auto& k : kategorienListe) {
-        std::cout << k->getName() << " wird geloescht!" << std::endl;
-        delete k;
-    }
-}*/

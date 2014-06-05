@@ -31,7 +31,6 @@ public:
     const std::vector<std::unique_ptr<Kategorie>>& getKategorienListe() const;
     void printFreieKategorien() const;
     void setName(const std::string&);
-    void kategorienFreisetzen();
 
 private:
     std::string name;

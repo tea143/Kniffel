@@ -30,7 +30,6 @@ public:
     void spielerAnzeigen() const;
     void spielen();
     void ergebnisErmitteln();
-    void spielfeldAufraeumen();
 
 private:
     unsigned int spielerAnzahl;

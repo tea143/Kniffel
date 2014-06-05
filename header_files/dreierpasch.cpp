@@ -19,8 +19,7 @@ unsigned int Dreierpasch::punkteBerechnen(const std::vector<unsigned int> &augen
         }
         return punktzahl;
     }
-    gesetzt = true;
-    return 0;
+    return punktzahl;
 }
 
 

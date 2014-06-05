@@ -10,15 +10,15 @@ GrosseStrasse::~GrosseStrasse() {
 }
 
 unsigned int GrosseStrasse::punkteBerechnen(const std::vector<unsigned int> &augen) {
-    punktzahl = 0;
     std::vector<unsigned int> temp = augen;
     std::sort(temp.begin(), temp.end());
     for (size_t i = 0; i < 4; i++) {
         if ((temp.at(i) + 1) != (temp.at(i + 1))) {
             std::cout << "Keine Gro\xE1 \be Stra\xE1 \be (1-2-3-4-5 / 2-3-4-5-6)" << std::endl;
-            return 0;
+            return punktzahl;
         }
     }
+    gesetzt = true;
     std::cout << "Gro\xE1 \be Stra\xE1 \be: ";
     return punktzahl = 40;
 }

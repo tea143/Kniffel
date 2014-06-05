@@ -10,7 +10,6 @@ Chance::~Chance() {
 }
 
 unsigned int Chance::punkteBerechnen(const std::vector<unsigned int> &augen) {
-    punktzahl = 0;
     gesetzt = true;
     std::vector<unsigned int> temp = augen;
     for (size_t i = 0; i < temp.size(); i++) {

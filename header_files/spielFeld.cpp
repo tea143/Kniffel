@@ -70,15 +70,3 @@ void SpielFeld::ergebnisErmitteln() {
         }
     }
 }
-
-/**
- * Bevor das Programm beendet, muss das Spielfeld aufgeraeumt werden.
- *
- * @param spielerListe
- */
-/*void SpielFeld::spielfeldAufraeumen() {
-
-    for (auto& spieler : spielerListe) {
-        spieler.kategorienFreisetzen();
-    }
-}*/

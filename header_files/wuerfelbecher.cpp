@@ -28,10 +28,10 @@ vector<unsigned int> Wuerfelbecher::schuetteln(unsigned int anzahlWuerfel) {
 void Wuerfelbecher::wuerfelAuswaehlen() {
     unsigned int nummer;
     for (size_t i = 0; i < wuerfelbecher.size(); i++) {
-        cout << "Gib eine W\x81 \brfelnummer ein:" << endl;
-        nummer = io.readNumberBetween(1, 5);
-        ergebnis.insert(ergebnis.begin() + (nummer - 1), wuerfelbecher.at(i));
-        ergebnis.erase(ergebnis.begin() + nummer);
+		cout << "Gib eine W\x81 \brfelnummer ein:" << endl;
+		nummer = io.readNumberBetween(1, 5);
+		ergebnis.insert(ergebnis.begin() + (nummer - 1), wuerfelbecher.at(i));
+		ergebnis.erase(ergebnis.begin() + nummer);
     }
 }
 
