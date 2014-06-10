@@ -1,6 +1,0 @@
-digraph "header_files" {
-  compound=true
-  node [ fontsize="10", fontname="Helvetica"];
-  edge [ labelfontsize="10", labelfontname="Helvetica"];
-  dir_22ab920eeae3afa583e9d9484b71f140 [shape=box, label="header_files", style="filled", fillcolor="#eeeeff", pencolor="black", URL="dir_22ab920eeae3afa583e9d9484b71f140.html"];
-}
