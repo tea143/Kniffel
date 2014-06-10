@@ -14,7 +14,9 @@
 #include "einAusgabe.h"
 #include "zufallszahl.h"
 
-
+/**
+ * Die Klasse ist der Konstruktor für cpp.
+ */
 class Wuerfelbecher {
 public:
     Wuerfelbecher();

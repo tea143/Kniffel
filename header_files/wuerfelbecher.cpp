@@ -20,7 +20,7 @@ Wuerfelbecher::~Wuerfelbecher() {
 /**
  * Nimmt bestimmte Anzahl der Würfel entgegen und präsentiert eine zufällige Mischung
  * @param anzahlWuerfel - int: Anzahl Würfel, die gewürfel wurden
- * @return wuerfelbecher - vector<int>: Vector mit gerade gewürfelten Würfel
+ * @return wuerfelbecher - vector<int>, Vector mit gerade gewürfelten Würfel
  */
 vector<int> Wuerfelbecher::schuetteln(int anzahlWuerfel) {
     wuerfelbecher.clear();
@@ -46,7 +46,7 @@ void Wuerfelbecher::wuerfelAuswaehlen() {
 
 /**
  * Ausgabe des Ergebnisses
- * @return ergebnis - vector<int>: der Vector mit Endergebnissen
+ * @return ergebnis - vector<int>, der Vector mit Endergebnissen
  */
 const vector<int>& Wuerfelbecher::getErgebnis() const {
     return ergebnis;

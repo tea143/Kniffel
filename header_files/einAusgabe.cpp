@@ -27,6 +27,11 @@ size_t EinAusgabe::readNumberBetween(int anfang, int ende) {
     return anzahl;
 }
 
+/**
+ * Nummt der Vector mit Zahlen entgegen und gibt ihn aus
+ * Die Würfel werden mit ASCII Symbole ausgegebn. Anstatt der Wurfelaugen wird in der Mitt Zahl stehen
+ * @param zahlen - vector<int> - Vector mit Zahlen
+ */
 void EinAusgabe::wuerfelAusgeben(vector<int> zahlen) {
     // ASCII Code fuer obere Reihe - Wuerfelbegrenzung
     for (size_t a = 0; a < static_cast<unsigned>(zahlen.size()); a++) {
