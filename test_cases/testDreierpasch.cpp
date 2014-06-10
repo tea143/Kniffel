@@ -1,6 +1,6 @@
 #include <gtest/gtest.h>
 #include <vector>
-#include "#include "../header_files/dreierpasch.h"
+#include "../header_files/dreierpasch.h"
 
 using namespace std;
 
