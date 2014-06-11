@@ -1,6 +1,6 @@
-#include "einerBisSechser.h"
 #include <gtest/gtest.h>
 #include <vector>
+#include "../header_files/einerBisSechser.h"
 
 using namespace std;
 
@@ -41,7 +41,8 @@ TEST(EinerBisSechserTest, testFourEqualVierer) {
 
 TEST(EinerBisSechserTest, testFiveEqualFuenfer) {
     vector<unsigned int> wuerfel{5, 5, 5, 5, 5};
-    EinerBisSechser ebs(5, "Fünfer");
+    EinerBisSechser ebs(5, "F\x81 \bnfer");
     ebs.punkteBerechnen(wuerfel);
     EXPECT_EQ(25, ebs.getPunktzahl());
-} 
+}
+

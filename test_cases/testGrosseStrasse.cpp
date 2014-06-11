@@ -1,6 +1,6 @@
 #include <gtest/gtest.h>
 #include <vector>
-#include "grosseStrasse.h"
+#include "../header_files/grosseStrasse.h"
 
 using namespace std;
 
@@ -24,3 +24,4 @@ TEST(GrosseStrasseTest, testGsZweiBisSechs) {
     gs.punkteBerechnen(wuerfel);
     EXPECT_EQ(40,gs.getPunktzahl());
 }
+

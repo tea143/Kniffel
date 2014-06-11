@@ -1,6 +1,6 @@
 #include <gtest/gtest.h>
 #include <vector>
-#include "fullHouse.h"
+#include "../header_files/fullHouse.h"
 
 using namespace std;
 
@@ -31,3 +31,4 @@ TEST(FullhouseTest, testFullhouseUngeordnet) {
     fh.punkteBerechnen(wuerfel);
     EXPECT_EQ(25,fh.getPunktzahl());
 }
+

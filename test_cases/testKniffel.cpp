@@ -1,6 +1,6 @@
 #include <gtest/gtest.h>
 #include <vector>
-#include "kniffel.h"
+#include "../header_files/kniffel.h"
 
 using namespace std;
 
@@ -24,3 +24,4 @@ TEST(KniffelTest, testKniffelAndereZahlen) {
     k.punkteBerechnen(wuerfel);
     EXPECT_EQ(50, k.getPunktzahl());
 }
+

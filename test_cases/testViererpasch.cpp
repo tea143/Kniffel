@@ -1,6 +1,6 @@
 #include <gtest/gtest.h>
 #include <vector>
-#include "viererpasch.h"
+#include "../header_files/viererpasch.h"
 
 using namespace std;
 
@@ -24,3 +24,4 @@ TEST(ViererpaschTest, testViererpaschUngeordnet) {
     vp.punkteBerechnen(wuerfel);
     EXPECT_EQ(22,vp.getPunktzahl());
 }
+
