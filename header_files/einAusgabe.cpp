@@ -27,7 +27,13 @@ unsigned int EinAusgabe::readNumberBetween(int anfang, int ende) const {
     return anzahl;
 }
 
-void EinAusgabe::wuerfelAusgeben(vector<unsigned int> zahlen) const{
+
+/**
+ * Nummt der Vector mit Zahlen entgegen und gibt ihn aus
+ * Die Würfel werden mit ASCII Symbole ausgegebn. Anstatt der Wurfelaugen wird in der Mitt Zahl stehen
+ * @param zahlen - vector<int> - Vector mit Zahlen
+ */
+void EinAusgabe::wuerfelAusgeben(vector<int> zahlen) {
     // ASCII Code fuer obere Reihe - Wuerfelbegrenzung
     for (size_t a = 0; a < static_cast<unsigned>(zahlen.size()); a++) {
         printf("%c%c%c\t", 218, 196, 191);
