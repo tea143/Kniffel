@@ -1,8 +1,8 @@
-/**
- * 	@file: wuerfelbecher.cpp
+/*
+ * wuerfelbecher.cpp
  *
- *  @date: 21.05.2014
- *  @author: IFI
+ *  Created on: 21.05.2014
+ *      Author: IFI
  */
 
 #include "wuerfelbecher.h"
@@ -10,20 +10,19 @@
 using namespace std;
 
 Wuerfelbecher::Wuerfelbecher() {
-
+    //std::cout << "W\x81 \brfelbecher-Objekt wurde erzeugt.\n";
 }
 
 Wuerfelbecher::~Wuerfelbecher() {
-
+    //std::cout << "W\x81 \brfelbecher-Objekt wurde beendet.\n";
 }
 
-
 /**
- * Nimmt bestimmte Anzahl der Würfel entgegen und präsentiert eine zufällige Mischung
- * @param anzahlWuerfel - int: Anzahl Würfel, die gewürfel wurden
- * @return wuerfelbecher - vector<int>, Vector mit gerade gewürfelten Würfel
+ * Nimmt bestimmte Anzahl der WÃ¼rfel entgegen und prÃ¤sentiert eine zufÃ¤llige Mischung
+ * @param anzahlWuerfel - int: Anzahl WÃ¼rfel, die gewÃ¼rfel wurden
+ * @return wuerfelbecher - vector<int>, Vector mit gerade gewÃ¼rfelten WÃ¼rfel
  */
-vector<int> Wuerfelbecher::schuetteln(int anzahlWuerfel) {
+vector<unsigned int> Wuerfelbecher::schuetteln(unsigned int anzahlWuerfel) {
     wuerfelbecher.clear();
     for (size_t i = 0; i < static_cast<unsigned> (anzahlWuerfel); i++) {
         wuerfelbecher.push_back(Zufallszahl::rnd(1, 6));
@@ -32,16 +31,16 @@ vector<int> Wuerfelbecher::schuetteln(int anzahlWuerfel) {
 }
 
 /**
- * Fragt der Benutzer nach, mit wie viele Würfeln er weiter spielen möchte.
- * Die ausgewählte Stellen, werden im Ergebnis überschrieben
+ * Fragt den Benutzer nach, mit wie vielen WÃ¼rfeln er weiter spielen mÃ¶chte.
+ * Die ausgewÃ¤hlten Stellen werden im Ergebnis Ã¼berschrieben
  */
 void Wuerfelbecher::wuerfelAuswaehlen() {
     unsigned int nummer;
     for (size_t i = 0; i < wuerfelbecher.size(); i++) {
-		cout << "Gib eine W\x81 \brfelnummer ein:" << endl;
-		nummer = io.readNumberBetween(1, 5);
-		ergebnis.insert(ergebnis.begin() + (nummer - 1), wuerfelbecher.at(i));
-		ergebnis.erase(ergebnis.begin() + nummer);
+        cout << "Gib eine W\x81 \brfelnummer ein:" << endl;
+        nummer = io.readNumberBetween(1, 5);
+        ergebnis.insert(ergebnis.begin() + (nummer - 1), wuerfelbecher.at(i));
+        ergebnis.erase(ergebnis.begin() + nummer);
     }
 }
 
@@ -49,15 +48,16 @@ void Wuerfelbecher::wuerfelAuswaehlen() {
  * Ausgabe des Ergebnisses
  * @return ergebnis - vector<int>, der Vector mit Endergebnissen
  */
-const vector<int>& Wuerfelbecher::getErgebnis() const {
+const vector<unsigned int>& Wuerfelbecher::getErgebnis() const {
     return ergebnis;
 }
 
+
 /**
- * Der Spieler hat 3 Versuche um seine Würfelkombination zu wählen.
- * Im ersten Versuch werden alle 5 Würfel benutzt. Später wird der Benutzer gefragt,
- * ob er weiterhin würfel will oder der Ergebnis aufschreiben will.
- * Am Ende jedes Durchgangs werden die Würfel angezeigt, der Spieler gerade gewürfelt hat (unsortiert) und der Ergebnis dieser Runde (sortiert)
+ * Der Spieler hat 3 Versuche um seine WÃ¼rfelkombination zu wÃ¤hlen.
+ * Im ersten Versuch werden alle 5 WÃ¼rfel benutzt. SpÃ¤ter wird der Benutzer gefragt,
+ * ob er weiterhin wÃ¼rfel will oder der Ergebnis aufschreiben will.
+ * Am Ende jedes Durchgangs werden die WÃ¼rfel angezeigt, der Spieler gerade gewÃ¼rfelt hat (unsortiert) und der Ergebnis dieser Runde (sortiert)
  */
 void Wuerfelbecher::wuerfeln() {
     unsigned int anzahl;
@@ -71,7 +71,7 @@ void Wuerfelbecher::wuerfeln() {
             do {
                 cout << "M\x94 \bchtest du weiter w\x81 \brfeln? j/n:" << std::endl;
                 cin >> antwort;
-            } while (antwort == 'j' && antwort == 'n');
+            } while (antwort != 'j' && antwort != 'n');
             if (antwort == 'j') {
                 cout << endl << "Mit wie vielen W\x81 \brfel m\x94 \bchtest du w\x81 \brfeln?" << endl;
                 anzahl = io.readNumberBetween(1, 5);

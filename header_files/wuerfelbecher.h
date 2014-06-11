@@ -1,8 +1,8 @@
 /*
- *  @file: wuerfelbecher.h
+ * Wuerfelbecher.h
  *
- *  @date: 20.05.2014
- *  @author: IFI
+ *  Created on: 20.05.2014
+ *      Author: IFI
  */
 
 #ifndef WUERFELBECHER_H_
@@ -14,9 +14,7 @@
 #include "einAusgabe.h"
 #include "zufallszahl.h"
 
-/**
- * Die Klasse ist der Konstruktor für cpp.
- */
+
 class Wuerfelbecher {
 public:
     Wuerfelbecher();

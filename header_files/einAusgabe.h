@@ -9,7 +9,6 @@
 #define	EINAUSGABE_H
 
 #include <iostream>
-#include <stdio.h>
 #include <limits>
 #include <vector>
 
