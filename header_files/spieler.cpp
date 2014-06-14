@@ -43,8 +43,8 @@ unsigned int Spieler::getPunktzahl() const {
 
 bool Spieler::punktzahlErmitteln(unsigned int kategorienNummer, const std::vector<unsigned int>& wuerfel) {
     if (kategorienListe.at(kategorienNummer - 1)->isGesetzt()) {
-        std::cout << "Kategorie " << kategorienListe.at(kategorienNummer - 1)->getName() << " ist bereits gesetzt." << std::endl;
-        std::cout << "Bitte w\x84 \bhle eine andere Kategorie!" << std::endl;
+    	std::cerr << "Kategorie " << kategorienListe.at(kategorienNummer - 1)->getName() << " ist bereits gesetzt." << std::endl;
+        std::cerr << "Bitte w\x84 \bhle eine andere Kategorie!" << std::endl;
         return false;
     } else {
         kategorienListe.at(kategorienNummer - 1)->punkteBerechnen(wuerfel);

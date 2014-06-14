@@ -7,8 +7,6 @@
 
 #include "wuerfelbecher.h"
 
-using namespace std;
-
 Wuerfelbecher::Wuerfelbecher() {
     //std::cout << "W\x81 \brfelbecher-Objekt wurde erzeugt.\n";
 }
@@ -22,7 +20,7 @@ Wuerfelbecher::~Wuerfelbecher() {
  * @param anzahlWuerfel - int: Anzahl Würfel, die gewürfel wurden
  * @return wuerfelbecher - vector<int>, Vector mit gerade gewürfelten Würfel
  */
-vector<unsigned int> Wuerfelbecher::schuetteln(unsigned int anzahlWuerfel) {
+std::vector<unsigned int> Wuerfelbecher::schuetteln(unsigned int anzahlWuerfel) {
     wuerfelbecher.clear();
     for (size_t i = 0; i < static_cast<unsigned> (anzahlWuerfel); i++) {
         wuerfelbecher.push_back(Zufallszahl::rnd(1, 6));
@@ -37,7 +35,7 @@ vector<unsigned int> Wuerfelbecher::schuetteln(unsigned int anzahlWuerfel) {
 void Wuerfelbecher::wuerfelAuswaehlen() {
     unsigned int nummer;
     for (size_t i = 0; i < wuerfelbecher.size(); i++) {
-        cout << "Gib eine W\x81 \brfelnummer ein:" << endl;
+        std::cout << "Gib eine W\x81 \brfelnummer ein:" << std::endl;
         nummer = io.readNumberBetween(1, 5);
         ergebnis.insert(ergebnis.begin() + (nummer - 1), wuerfelbecher.at(i));
         ergebnis.erase(ergebnis.begin() + nummer);
@@ -48,7 +46,7 @@ void Wuerfelbecher::wuerfelAuswaehlen() {
  * Ausgabe des Ergebnisses
  * @return ergebnis - vector<int>, der Vector mit Endergebnissen
  */
-const vector<unsigned int>& Wuerfelbecher::getErgebnis() const {
+const std::vector<unsigned int>& Wuerfelbecher::getErgebnis() const {
     return ergebnis;
 }
 
@@ -69,11 +67,11 @@ void Wuerfelbecher::wuerfeln() {
             ergebnis = wuerfelbecher;
         } else {
             do {
-                cout << "M\x94 \bchtest du weiter w\x81 \brfeln? j/n:" << std::endl;
-                cin >> antwort;
+                std::cout << "M\x94 \bchtest du weiter w\x81 \brfeln? j/n:" << std::endl;
+                std::cin >> antwort;
             } while (antwort != 'j' && antwort != 'n');
             if (antwort == 'j') {
-                cout << endl << "Mit wie vielen W\x81 \brfel m\x94 \bchtest du w\x81 \brfeln?" << endl;
+                std::cout << std::endl << "Mit wie vielen W\x81 \brfel m\x94 \bchtest du w\x81 \brfeln?" << std::endl;
                 anzahl = io.readNumberBetween(1, 5);
                 schuetteln(anzahl);
                 wuerfelAuswaehlen();
@@ -83,10 +81,10 @@ void Wuerfelbecher::wuerfeln() {
         }
         sort(ergebnis.begin(), ergebnis.end());
         if (versuch != 4) {
-            cout << "Wurfnummer: " << versuch << endl;
-            cout << "Gew\x81 \brfelt:" << endl;
+            std::cout << "Wurfnummer: " << versuch << std::endl;
+            std::cout << "Gew\x81 \brfelt:" << std::endl;
             io.wuerfelAusgeben(wuerfelbecher);
-            cout << "Ergebnis:" << endl;
+            std::cout << "Ergebnis:" << std::endl;
             io.wuerfelAusgeben(ergebnis);
         }
     }
