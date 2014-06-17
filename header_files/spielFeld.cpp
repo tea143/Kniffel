@@ -1,10 +1,6 @@
 #include "spielFeld.h"
 
-SpielFeld::SpielFeld(unsigned int anzahl)
-: spielerAnzahl {
-    anzahl
-}
-{
+SpielFeld::SpielFeld() {
     //std::cout << "SpielFeld-Objekt wurde erzeugt.\n";
 }
 
@@ -12,12 +8,15 @@ SpielFeld::~SpielFeld() {
     //std::cout << "SpielFeld-Objekt wurde beendet.\n";
 }
 
-unsigned int SpielFeld::getSpielerAnzahl() const {
-    return spielerAnzahl;
-}
-
+/**
+ * Methode erfragt Anzahl von Spielern, erfragt den Namen fuer jeden und uebergibt Zeiger
+ * auf die Spieler an den Vector spielerListe
+ */
 void SpielFeld::spielerKreieren() {
     std::string name;
+    std::cout << "Das Kniffel-Spiel f\x84 \bngt an:\n" << std::endl;
+    std::cout << "Wie viele Spieler spielen mit? " << std::endl;
+    unsigned int spielerAnzahl = io.readNumberBetween(1, 5);
     for (size_t i = 0; i < spielerAnzahl; i++) {
         std::cout << "Geben Sie den Namen des " << i + 1 << ". Spielers ein: " << std::endl;
         std::cin >> name;
@@ -25,20 +24,14 @@ void SpielFeld::spielerKreieren() {
     }
 }
 
-void SpielFeld::spielerAnzeigen() const {
-    for (const auto& spieler : spielerListe) {
-        std::cout << "Spieler: " << spieler->getName() << std::endl;
-    }
-}
-
-const std::vector<std::unique_ptr<Spieler>>& SpielFeld::getSpielerListe() const {
-    return spielerListe;
-}
-
+/**
+ * Steuerung des Spiels:
+ * Es gibt 13 Spielrunden und innerhalb dieser 13 Spielrunden
+ */
 void SpielFeld::spielen() {
     for (size_t i = 0; i < SPIELRUNDEN; i++) {
         std::cout << std::endl << "###### RUNDE " << i + 1 << " ######:" << std::endl;
-        for (auto& spieler : spielerListe) {
+        for (const auto& spieler : spielerListe) {
             std::cout << std::endl << "Spieler " << spieler->getName() << " ist an der Reihe!" << std::endl;
             spieler->printFreieKategorien();
             Wuerfelbecher becher;
@@ -53,10 +46,13 @@ void SpielFeld::spielen() {
     }
 }
 
+/**
+ * Methode veranlasst, dass der Bonus und Gesamtpunktzahl fuer jeden Spieler ermittelt werden
+ */
 void SpielFeld::ergebnisErmitteln() {
     std::cout << std::endl << std::endl << "ERGEBNIS: " << std::endl;
     unsigned int gewinnerPunktzahl = 0;
-    for (auto& spieler : spielerListe) {
+    for (const auto& spieler : spielerListe) {
         spieler->bonusErmitteln();
         std::cout << spieler->getName() << " hat " << spieler->getPunktzahl() << " Punkte erreicht." << std::endl;
         if (static_cast<unsigned> (spieler->getPunktzahl()) > gewinnerPunktzahl) {

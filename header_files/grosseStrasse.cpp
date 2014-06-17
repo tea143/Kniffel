@@ -15,11 +15,9 @@ unsigned int GrosseStrasse::punkteBerechnen(const std::vector<unsigned int> &aug
     std::sort(temp.begin(), temp.end());
     for (size_t i = 0; i < 4; i++) {
         if ((temp.at(i) + 1) != (temp.at(i + 1))) {
-            std::cout << "Keine Gro\xE1 \be Stra\xE1 \be (1-2-3-4-5 / 2-3-4-5-6)" << std::endl;
             return punktzahl;
         }
     }
-    std::cout << "Gro\xE1 \be Stra\xE1 \be: ";
     return punktzahl = 40;
 }
 

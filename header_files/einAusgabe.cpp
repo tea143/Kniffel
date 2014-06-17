@@ -7,6 +7,7 @@
 
 #include "einAusgabe.h"
 
+using namespace std;
 
 EinAusgabe::EinAusgabe() {
     //std::cout << "EinAusgabe-Objekt wurde erzeugt.\n";
@@ -16,22 +17,28 @@ EinAusgabe::~EinAusgabe() {
     //std::cout << "EinAusgabe-Objekt wurde beendet.\n";
 }
 
+/**
+ * Fordert den Benutzer auf eine Zahl einzugeben, die in einer bestimmten Spanne ist.
+ * \param anfang Beginn der Spanne von Zahlen
+ * \param ende Ende der Spanne von Zahlen
+ * \return zahl Gibt die Zahl, die richtig vom Benutzer eingegeben wurde zurueck
+ */
 unsigned int EinAusgabe::readNumberBetween(int anfang, int ende) const {
     unsigned int anzahl = 0;
-    while (!(std::cin >> anzahl) || anzahl > static_cast<unsigned> (ende)) {
-    	std::cerr << "Gib eine Zahl zwischen " << anfang << " und " << ende << " und ein!" << std::endl;
-        std::cin.clear();
-        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+    while (!(cin >> anzahl) || anzahl > static_cast<unsigned> (ende)) {
+        cout << "Gib eine Zahl zwischen " << anfang << " und " << ende << " und ein!" << endl;
+        cin.clear();
+        cin.ignore(numeric_limits<streamsize>::max(), '\n');
     }
     return anzahl;
 }
 
 /**
- * Nummt Vector mit Zahlen entgegen und gibt ihn aus
- * Die Würfel werden mit ASCII Symbolen ausgegeben. Anstatt der Wurfelaugen wird in der Mitte eine Zahl stehen
- * @param zahlen - vector<int> - Vector mit Zahlen
+ * Nimmt Vector mit Zahlen entgegen und gibt sie aus
+ * Die Würfel werden mit ASCII Symbolen ausgegeben. Anstatt der Wurfelaugen steht in der Mitte eine Zahl
+ * \param zahlen  Vector mit Zahlen
  */
-void EinAusgabe::wuerfelAusgeben(std::vector<unsigned int> zahlen) const {
+void EinAusgabe::wuerfelAusgeben(vector<unsigned int> zahlen) const {
     // ASCII Code fuer obere Reihe - Wuerfelbegrenzung
     for (size_t a = 0; a < static_cast<unsigned> (zahlen.size()); a++) {
         printf("%c%c%c\t", 218, 196, 191);

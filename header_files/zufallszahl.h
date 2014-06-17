@@ -22,9 +22,9 @@ public:
 
     /**
      * Erzeugt eine "zufaellige" Zahl zwischen unten- und obergrenze
-     * @param untergrenze - int: unterste Grenze zur Zufallszahlerzeugung
-     * @param obergrenze - int: oberste Grenze zur Zufallszahlerzeugung
-     * @return zufallszahl - int zwischen 1 und 6.
+     * \param untergrenze int: unterste Grenze zur Zufallszahlerzeugung
+     * \param obergrenze int: oberste Grenze zur Zufallszahlerzeugung
+     * \return zufallszahl int zwischen 1 und 6.
      */
     static int rnd(int untergrenze, int obergrenze) {
         static Zufallszahl dummy;

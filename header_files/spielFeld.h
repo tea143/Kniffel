@@ -19,20 +19,13 @@
 
 class SpielFeld {
 public:
-    //Konstruktor:
-    SpielFeld(unsigned int);
-    //Destruktor:
+    SpielFeld();
     ~SpielFeld();
-
-    unsigned int getSpielerAnzahl() const;
-    const std::vector<std::unique_ptr<Spieler>>& getSpielerListe() const;
     void spielerKreieren();
-    void spielerAnzeigen() const;
     void spielen();
     void ergebnisErmitteln();
 
 private:
-    unsigned int spielerAnzahl;
     EinAusgabe io;
     std::vector<std::unique_ptr<Spieler>> spielerListe;
 };

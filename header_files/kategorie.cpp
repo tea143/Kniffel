@@ -2,7 +2,7 @@
 
 Kategorie::Kategorie(const std::string& n)
 :name {n}{
-	//std::cout << "Kategorie-Objekt wurde erzeugt.\n";
+	//std::cout << "Kategorie-Objekt wurde beendet.\n";
 }
 
 const std::string& Kategorie::getName() const {

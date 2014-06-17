@@ -7,6 +7,8 @@
 
 #include "wuerfelbecher.h"
 
+using namespace std;
+
 Wuerfelbecher::Wuerfelbecher() {
     //std::cout << "W\x81 \brfelbecher-Objekt wurde erzeugt.\n";
 }
@@ -16,11 +18,12 @@ Wuerfelbecher::~Wuerfelbecher() {
 }
 
 /**
- * Nimmt bestimmte Anzahl der Würfel entgegen und präsentiert eine zufällige Mischung
- * @param anzahlWuerfel - int: Anzahl Würfel, die gewürfel wurden
- * @return wuerfelbecher - vector<int>, Vector mit gerade gewürfelten Würfel
+ * Nimmt bestimmte Anzahl der Würfel entgegen und ermittelt zufällige Zahlen
+ * zwischen 1 und 6
+ * \param anzahlWuerfel - int: Anzahl Würfel, die gewürfel wurden
+ * \return wuerfelbecher - vector<int>, Vector mit gerade gewürfelten Würfel
  */
-std::vector<unsigned int> Wuerfelbecher::schuetteln(unsigned int anzahlWuerfel) {
+vector<unsigned int> Wuerfelbecher::schuetteln(unsigned int anzahlWuerfel) {
     wuerfelbecher.clear();
     for (size_t i = 0; i < static_cast<unsigned> (anzahlWuerfel); i++) {
         wuerfelbecher.push_back(Zufallszahl::rnd(1, 6));
@@ -35,7 +38,7 @@ std::vector<unsigned int> Wuerfelbecher::schuetteln(unsigned int anzahlWuerfel) 
 void Wuerfelbecher::wuerfelAuswaehlen() {
     unsigned int nummer;
     for (size_t i = 0; i < wuerfelbecher.size(); i++) {
-        std::cout << "Gib eine W\x81 \brfelnummer ein:" << std::endl;
+        cout << "Gib eine W\x81 \brfelnummer ein:" << endl;
         nummer = io.readNumberBetween(1, 5);
         ergebnis.insert(ergebnis.begin() + (nummer - 1), wuerfelbecher.at(i));
         ergebnis.erase(ergebnis.begin() + nummer);
@@ -44,9 +47,9 @@ void Wuerfelbecher::wuerfelAuswaehlen() {
 
 /**
  * Ausgabe des Ergebnisses
- * @return ergebnis - vector<int>, der Vector mit Endergebnissen
+ * \return ergebnis vector<int>, der Vector mit Endergebnissen
  */
-const std::vector<unsigned int>& Wuerfelbecher::getErgebnis() const {
+const vector<unsigned int>& Wuerfelbecher::getErgebnis() const {
     return ergebnis;
 }
 
@@ -54,8 +57,9 @@ const std::vector<unsigned int>& Wuerfelbecher::getErgebnis() const {
 /**
  * Der Spieler hat 3 Versuche um seine Würfelkombination zu wählen.
  * Im ersten Versuch werden alle 5 Würfel benutzt. Später wird der Benutzer gefragt,
- * ob er weiterhin würfel will oder der Ergebnis aufschreiben will.
- * Am Ende jedes Durchgangs werden die Würfel angezeigt, der Spieler gerade gewürfelt hat (unsortiert) und der Ergebnis dieser Runde (sortiert)
+ * ob er weiterhin würfel will oder das Ergebnis aufschreiben will.
+ * Am Ende jedes Durchgangs werden die Würfel angezeigt, die der Spieler gerade gewürfelt hat (unsortiert) 
+ * und das Ergebnis dieser Runde (sortiert)
  */
 void Wuerfelbecher::wuerfeln() {
     unsigned int anzahl;
@@ -67,11 +71,11 @@ void Wuerfelbecher::wuerfeln() {
             ergebnis = wuerfelbecher;
         } else {
             do {
-                std::cout << "M\x94 \bchtest du weiter w\x81 \brfeln? j/n:" << std::endl;
-                std::cin >> antwort;
+                cout << "M\x94 \bchtest du weiter w\x81 \brfeln? j/n:" << std::endl;
+                cin >> antwort;
             } while (antwort != 'j' && antwort != 'n');
             if (antwort == 'j') {
-                std::cout << std::endl << "Mit wie vielen W\x81 \brfel m\x94 \bchtest du w\x81 \brfeln?" << std::endl;
+                cout << endl << "Mit wie vielen W\x81 \brfel m\x94 \bchtest du w\x81 \brfeln?" << endl;
                 anzahl = io.readNumberBetween(1, 5);
                 schuetteln(anzahl);
                 wuerfelAuswaehlen();
@@ -81,10 +85,10 @@ void Wuerfelbecher::wuerfeln() {
         }
         sort(ergebnis.begin(), ergebnis.end());
         if (versuch != 4) {
-            std::cout << "Wurfnummer: " << versuch << std::endl;
-            std::cout << "Gew\x81 \brfelt:" << std::endl;
+            cout << "Wurfnummer: " << versuch << endl;
+            cout << "Gew\x81 \brfelt:" << endl;
             io.wuerfelAusgeben(wuerfelbecher);
-            std::cout << "Ergebnis:" << std::endl;
+            cout << "Ergebnis:" << endl;
             io.wuerfelAusgeben(ergebnis);
         }
     }

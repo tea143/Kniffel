@@ -41,10 +41,17 @@ unsigned int Spieler::getPunktzahl() const {
     return punktzahl;
 }
 
+/**
+ * Die Methode ueberprueft, ob eine Kategorie noch frei ist und gibt - falls ja  - 
+ * die Augenzahl an die gewaehlte Kategorie zum Berechnen der Punkte weiter.
+ * \param kategorienNummer Position der Kategorie im Vector
+ * \param wuerfel Augenzahl der einzelnen Wuerfel im Vector
+ * \return bool Gibt true zurueck, wenn die Kategorie noch frei ist und false, wenn sie besetzt ist
+ */
 bool Spieler::punktzahlErmitteln(unsigned int kategorienNummer, const std::vector<unsigned int>& wuerfel) {
     if (kategorienListe.at(kategorienNummer - 1)->isGesetzt()) {
-    	std::cerr << "Kategorie " << kategorienListe.at(kategorienNummer - 1)->getName() << " ist bereits gesetzt." << std::endl;
-        std::cerr << "Bitte w\x84 \bhle eine andere Kategorie!" << std::endl;
+        std::cout << "Kategorie " << kategorienListe.at(kategorienNummer - 1)->getName() << " ist bereits gesetzt." << std::endl;
+        std::cout << "Bitte w\x84 \bhle eine andere Kategorie!" << std::endl;
         return false;
     } else {
         kategorienListe.at(kategorienNummer - 1)->punkteBerechnen(wuerfel);
@@ -55,6 +62,10 @@ bool Spieler::punktzahlErmitteln(unsigned int kategorienNummer, const std::vecto
     }
 }
 
+/**
+ * Die Methode ermittel, ob der Spieler  fuer die Punktanzahl in den Kategorien Einer bis Sechser
+ * einen Bonus erhaelt und addiert ihn gegebenenfalls auf die Gesamtpunktzahl.
+ */
 void Spieler::bonusErmitteln() {
     unsigned int punkteFuerBonus = 0;
     for (const auto& kategorie : kategorienListe) {
@@ -72,6 +83,10 @@ const std::vector<std::unique_ptr<Kategorie>>& Spieler::getKategorienListe() con
     return kategorienListe;
 }
 
+/**
+ * Die Methode gibt aus, welche Kategorien bereits besetzt und welche noch frei sind.
+ *
+ */
 void Spieler::printFreieKategorien() const {
     std::cout << std::endl << "Kategorien: " << std::endl;
     for (size_t i = 0; i < kategorienListe.size(); i++) {
