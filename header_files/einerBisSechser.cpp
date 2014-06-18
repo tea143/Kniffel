@@ -12,6 +12,12 @@ EinerBisSechser::~EinerBisSechser() {
     //std::cout << getName() << "-Objekt wurde beendet.\n";
 }
 
+/**
+ *	Diese Methode, welche von der abstrakten Kategorie-Klasse erhalten wird,
+ *	wird ueberschrieben, um die Punktezahl fuer EinerBisSechser-Kategorie zu berechnen.
+ * \param augen - Vektor mit Augen zu berechnen
+ * \return punktzahl - berechnete Punktezahl wird zurueckgegeben
+ */
 unsigned int EinerBisSechser::punkteBerechnen(const std::vector<unsigned int> &augen) {
 	gesetzt = true;
     std::vector<unsigned int> temp = augen;
@@ -26,10 +32,18 @@ unsigned int EinerBisSechser::punkteBerechnen(const std::vector<unsigned int> &a
     return punktzahl;
 }
 
+/**
+ * Getter-Methode, um zu wissen, welche Kategorie bzw. 1...6 gesetzt wurde.
+ * \return gesetzteZahl - wird zurueckgegeben
+ */
 unsigned int EinerBisSechser::getGesetzteZahl() const {
     return gesetzteZahl;
 }
 
+/**
+ * Setter-Methode, um Kategorie bzw. 1...6 zu setzen.
+ * \param gesetzteZahl - wird gesetzt
+ */
 void EinerBisSechser::setGesetzteZahl(unsigned int gesetzteZahl) {
     this->gesetzteZahl = gesetzteZahl;
 }

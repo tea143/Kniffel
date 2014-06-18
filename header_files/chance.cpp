@@ -9,6 +9,12 @@ Chance::~Chance() {
 	//std::cout << getName() << "-Objekt wurde beendet.\n";
 }
 
+/**
+ *	Diese Methode, welche von der abstrakten Kategorie-Klasse erhalten wird,
+ *	wird ueberschrieben, um die Punktezahl fuer Chance-Kategorie zu berechnen.
+ * \param augen - Vektor mit Augen zu berechnen
+ * \return punktzahl - berechnete Punktezahl wird zurueckgegeben
+ */
 unsigned int Chance::punkteBerechnen(const std::vector<unsigned int> &augen) {
     gesetzt = true;
     std::vector<unsigned int> temp = augen;
