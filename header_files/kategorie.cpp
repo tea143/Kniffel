@@ -28,7 +28,12 @@ bool Kategorie::isGesetzt() const {
     return gesetzt;
 }
 
-
+/**
+ * Globale Funktion zum Überschreiben des <<-Operators
+ * \param ausgabe Ausgabekanal
+ * \param k Kategorie
+ * \return ausgabe Gibt den Ausgabekanal zurück
+ */
 std::ostream& operator<<(std::ostream& ausgabe, const Kategorie& k) {
     ausgabe << k.getName() << ":\t";
     if (k.isGesetzt()) {
