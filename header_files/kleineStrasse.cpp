@@ -10,9 +10,9 @@ KleineStrasse::~KleineStrasse() {
 }
 
 /**
- *	Diese Methode, welche von der abstrakten Kategorie-Klasse erhalten wird,
- *	wird ueberschrieben, um die Punktezahl fuer KleineStrasse-Kategorie zu berechnen.
- * \param augen - Vektor mit Augen zu berechnen
+ * Diese Methode, welche von der abstrakten Kategorie-Klasse erhalten wird,
+ * wird ueberschrieben, um die Punktezahl fuer KleineStrasse-Kategorie zu berechnen.
+ * \param augen - Vektor um Augen zu berechnen
  * \return punktzahl - berechnete Punktezahl wird zurueckgegeben
  */
 unsigned int KleineStrasse::punkteBerechnen(const std::vector<unsigned int> &augen) {

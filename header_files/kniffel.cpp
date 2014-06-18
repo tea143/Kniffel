@@ -10,9 +10,9 @@ Kniffel::~Kniffel() {
 }
 
 /**
- *	Diese Methode, welche von der abstrakten Kategorie-Klasse erhalten wird,
- *	wird ueberschrieben, um die Punktezahl fuer Kniffel-Kategorie zu berechnen.
- * \param augen - Vektor mit Augen zu berechnen
+ * Diese Methode, welche von der abstrakten Kategorie-Klasse erhalten wird,
+ * wird ueberschrieben, um die Punktezahl fuer Kniffel-Kategorie zu berechnen.
+ * \param augen - Vektor um Augen zu berechnen
  * \return punktzahl - berechnete Punktezahl wird zurueckgegeben
  */
 unsigned int Kniffel::punkteBerechnen(const std::vector<unsigned int> &augen) {

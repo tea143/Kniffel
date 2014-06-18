@@ -33,6 +33,7 @@ private:
     std::string name;
 };
 
+std::ostream& operator<<(std::ostream&, const Kategorie& );
 
 #endif /* KATEGORIE_H_ */
 

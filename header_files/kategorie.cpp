@@ -1,8 +1,11 @@
 #include "kategorie.h"
 
 Kategorie::Kategorie(const std::string& n)
-:name {n}{
-	//std::cout << "Kategorie-Objekt wurde beendet.\n";
+: name {
+    n
+}
+{
+    //std::cout << "Kategorie-Objekt wurde beendet.\n";
 }
 
 const std::string& Kategorie::getName() const {
@@ -23,4 +26,16 @@ void Kategorie::setPunktzahl(unsigned int p) {
 
 bool Kategorie::isGesetzt() const {
     return gesetzt;
+}
+
+
+std::ostream& operator<<(std::ostream& ausgabe, const Kategorie& k) {
+    ausgabe << k.getName() << ":\t";
+    if (k.isGesetzt()) {
+        ausgabe << "Punktzahl: " << k.getPunktzahl();
+    } else {
+        ausgabe << "offen";
+    }
+    ausgabe << std::endl;
+    return ausgabe;
 }

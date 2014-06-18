@@ -90,13 +90,7 @@ const std::vector<std::unique_ptr<Kategorie>>& Spieler::getKategorienListe() con
 void Spieler::printFreieKategorien() const {
     std::cout << std::endl << "Kategorien: " << std::endl;
     for (size_t i = 0; i < kategorienListe.size(); i++) {
-        std::cout << i + 1 << ". " << kategorienListe.at(i)->getName() << ":\t";
-        if (kategorienListe.at(i)->isGesetzt()) {
-            std::cout << "Punktzahl: " << kategorienListe.at(i)->getPunktzahl();
-        } else {
-            std::cout << "offen";
-        }
-        std::cout << std::endl;
+        std::cout << i + 1 << ". " << *kategorienListe.at(i);
     }
 }
 
