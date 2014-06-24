@@ -20,7 +20,6 @@ void SpielFeld::spielerKreieren() {
     for (size_t i = 0; i < spielerAnzahl; i++) {
         std::cout << "Geben Sie den Namen des " << i + 1 << ". Spielers ein: " << std::endl;
         std::cin >> name;
-        //std::cin.clear();
         std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
         spielerListe.push_back(std::unique_ptr<Spieler>(new Spieler(name)));
     }
