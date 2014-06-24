@@ -32,7 +32,7 @@ void SpielFeld::spielen() {
     for (size_t i = 0; i < SPIELRUNDEN; i++) {
         std::cout << std::endl << "###### RUNDE " << i + 1 << " ######:" << std::endl;
         for (const auto& spieler : spielerListe) {
-            std::cout << std::endl << "Spieler " << spieler->getName() << " ist an der Reihe!" << std::endl;
+            std::cout << std::endl << std::endl << "SPIELER " << spieler->getName() << " IST AN DER REIHE!" << std::endl;
             spieler->printFreieKategorien();
             Wuerfelbecher becher;
             becher.wuerfeln();

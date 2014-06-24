@@ -56,7 +56,7 @@ void EinAusgabe::wuerfelAusgeben(vector<unsigned int> zahlen) const {
     printf("\n");
     printf("Nummern\n");
     for (size_t a = 0; a < static_cast<unsigned> (zahlen.size()); a++) {
-        printf(" %d \t", a + 1);
+        printf(" %zu \t", a + 1);
     }
     printf("\n\n");
 }

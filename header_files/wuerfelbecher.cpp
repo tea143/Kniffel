@@ -36,10 +36,17 @@ vector<unsigned int> Wuerfelbecher::schuetteln(unsigned int anzahlWuerfel) {
  * Die ausgewählten Stellen werden im Ergebnis überschrieben
  */
 void Wuerfelbecher::wuerfelAuswaehlen() {
+    vector<unsigned int> nummern;
+    nummern.clear();
     unsigned int nummer;
     for (size_t i = 0; i < wuerfelbecher.size(); i++) {
-        cout << "Gib eine W\x81 \brfelnummer ein:" << endl;
+        cout << "Gib die "<< (i+1) <<". W\x81 \brfelnummer ein:" << endl;
         nummer = io.readNumberBetween(1, 5);
+        while (std::find(nummern.begin(), nummern.end(), nummer) != nummern.end()) {
+            std::cout << "Diese Nummer hast du bereits eingegeben! Gib eine neue W\x81 \brfelnummer ein!" << endl;
+            nummer = io.readNumberBetween(1, 5);
+        }
+        nummern.push_back(nummer);
         ergebnis.insert(ergebnis.begin() + (nummer - 1), wuerfelbecher.at(i));
         ergebnis.erase(ergebnis.begin() + nummer);
     }
@@ -52,7 +59,6 @@ void Wuerfelbecher::wuerfelAuswaehlen() {
 const vector<unsigned int>& Wuerfelbecher::getErgebnis() const {
     return ergebnis;
 }
-
 
 /**
  * Der Spieler hat 3 Versuche um seine Würfelkombination zu wählen.
@@ -75,7 +81,7 @@ void Wuerfelbecher::wuerfeln() {
                 cin >> antwort;
             } while (antwort != 'j' && antwort != 'n');
             if (antwort == 'j') {
-                cout << endl << "Mit wie vielen W\x81 \brfel m\x94 \bchtest du w\x81 \brfeln?" << endl;
+                cout << endl << "Mit wie vielen W\x81 \brfeln m\x94 \bchtest du w\x81 \brfeln?" << endl;
                 anzahl = io.readNumberBetween(1, 5);
                 schuetteln(anzahl);
                 wuerfelAuswaehlen();
