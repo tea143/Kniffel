@@ -30,6 +30,8 @@ unsigned int EinAusgabe::readNumberBetween(int anfang, int ende) const {
         cin.clear();
         cin.ignore(numeric_limits<streamsize>::max(), '\n');
     }
+    cin.clear();
+    cin.ignore(numeric_limits<streamsize>::max(), '\n');
     return anzahl;
 }
 

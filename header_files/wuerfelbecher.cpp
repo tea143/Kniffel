@@ -40,7 +40,7 @@ void Wuerfelbecher::wuerfelAuswaehlen() {
     nummern.clear();
     unsigned int nummer;
     for (size_t i = 0; i < wuerfelbecher.size(); i++) {
-        cout << "Gib die "<< (i+1) <<". W\x81 \brfelnummer ein:" << endl;
+        cout << "Gib die " << (i + 1) << ". W\x81 \brfelnummer ein:" << endl;
         nummer = io.readNumberBetween(1, 5);
         while (std::find(nummern.begin(), nummern.end(), nummer) != nummern.end()) {
             std::cout << "Diese Nummer hast du bereits eingegeben! Gib eine neue W\x81 \brfelnummer ein!" << endl;
@@ -78,7 +78,8 @@ void Wuerfelbecher::wuerfeln() {
         } else {
             do {
                 cout << "M\x94 \bchtest du weiter w\x81 \brfeln? j/n:" << std::endl;
-                cin >> antwort;
+                cin.get(antwort);
+                cin.ignore(numeric_limits<streamsize>::max(), '\n');
             } while (antwort != 'j' && antwort != 'n');
             if (antwort == 'j') {
                 cout << endl << "Mit wie vielen W\x81 \brfeln m\x94 \bchtest du w\x81 \brfeln?" << endl;

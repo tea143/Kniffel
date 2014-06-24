@@ -73,6 +73,7 @@ void Spieler::bonusErmitteln() {
             punkteFuerBonus += kategorie->getPunktzahl();
             if (punkteFuerBonus >= 63) {
                 punktzahl += 35;
+                std::cout << "Spieler " << name << " erh\x84 \blt den Bonus (" << punkteFuerBonus << " Punkte in den Kategorien Einer bis Sechser)!" << std::endl;
                 break;
             }
         }
